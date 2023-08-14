@@ -14,3 +14,13 @@
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
 }
+
+@layer base {
+    html {
+        @apply font-sans;
+    }
+
+    body {
+        @apply bg-black min-h-screen grid;
+    }
+}

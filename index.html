@@ -7,6 +7,112 @@
         <title>Vite App</title>
     </head>
     <body>
+        <div id="smooth-wrapper">
+            <header
+                class="fixed z-10 left-1/2 top-12 -translate-x-1/2 bg-[#0A0A0A] rounded-full flex items-center justify-between p-2 pl-6 border border-[#212121] w-full max-w-[342px]"
+            >
+                <img src="logo.svg" alt="rely logo" />
+                <button
+                    class="px-[18px] py-4 flex items-center text-white gap-2 bg-[#121212] rounded-full"
+                >
+                    <img src="/menu-icon.svg" alt="menu icon" />
+                    <span class="text-lg">Menu</span>
+                </button>
+            </header>
+            <main class="grid" id="smooth-content">
+                <section
+                    id="hero"
+                    class="text-white self-center bg-cover bg-center min-h-screen grid bg-[url(/hero-background.png)]"
+                >
+                    <div class="container grid h-full">
+                        <div
+                            class="flex flex-col text-neutral-light w-full max-w-[948px] justify-self-center self-center"
+                        >
+                            <h1 class="text-8xl font-normal tracking-tight mb-7">
+                                The premium path to financial privilege.
+                            </h1>
+                            <p class="text-2xl max-w-[832px] mb-10">
+                                Our revolutionary payment solution allows you to digitize your bank
+                                debit cards and consolidate them into one single, easy-to-use card.
+                            </p>
+                            <footer class="flex items-center justify-between">
+                                <button
+                                    class="p-2 rounded-full flex items-center bg-[#FFFBFA] text-black"
+                                >
+                                    <span class="grow px-3 text-sm">Request early access</span>
+                                    <span
+                                        class="grid place-items-center rounded-full w-14 h-14 bg-black"
+                                    >
+                                        <svg
+                                            width="34"
+                                            height="34"
+                                            viewBox="0 0 34 34"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M22.5208 11.5551L11.379 21.5981"
+                                                stroke="#D0D5DD"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                            <path
+                                                d="M13.9936 11.1308L22.5207 11.5546L22.0608 20.0806"
+                                                stroke="#D0D5DD"
+                                                stroke-width="1.5"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                            />
+                                        </svg>
+                                    </span>
+                                </button>
+                                <img src="/hero-flower-element.svg" alt="hero flower design" />
+                            </footer>
+                        </div>
+                    </div>
+                </section>
+                <section id="staggered-lines" class="pb-10 pt-2 bg-white">
+                    <div class="w-full h-5 mb-1 bg-black" data-speed="1" data-lag="0.1"></div>
+                    <div class="w-full h-4 mb-2 bg-black" data-speed="1" data-lag="0.2"></div>
+                    <div class="w-full h-3 mb-3 bg-black" data-speed="1" data-lag="0.3"></div>
+                    <div class="w-full h-2 mb-4 bg-black" data-speed="1" data-lag="0.4"></div>
+                    <div class="w-full h-1 mb-5 bg-black" data-speed="1" data-lag="0.5"></div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="pt-20 flex flex-col gap-16">
+                            <h2
+                                class="text-neutral-light text-[32px] w-full max-w-[480px] mx-auto text-center"
+                            >
+                                The future of card payment is here and now
+                            </h2>
+                            <img
+                                src="/future-card.png"
+                                alt="future of card payment"
+                                class="w-full object-center object-cover"
+                            />
+                        </div>
+                    </div>
+                </section>
+                <section class="bg-white">
+                    <div class="container py-28">
+                        <div class="flex items-center">
+                            <ul>
+                                <li>
+                                    <div class="flex flex-col text-[#1E1E1E]">
+                                        <span>1</span>
+                                        <h2 class="uppercase">Sign up</h2>
+                                        <p>Register and setup your Rely account to get started</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="/scroll-smoother.js"></script>
         <script type="module" src="/main.js"></script>
     </body>
 </html>
