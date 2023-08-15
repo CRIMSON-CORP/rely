@@ -7,22 +7,22 @@
         <title>Rely</title>
     </head>
     <body>
-        <div id="smooth-wrapper">
-            <header
-                class="fixed z-10 left-1/2 top-6 sm:top-12 -translate-x-1/2 px-5 w-full grid place-items-center"
+        <header
+            class="fixed z-10 left-1/2 top-6 sm:top-12 -translate-x-1/2 px-5 w-full grid place-items-center"
+        >
+            <div
+                class="bg-[#0A0A0A] rounded-full flex items-center justify-between p-2 pl-6 border border-[#212121] w-full max-w-[342px]"
             >
-                <div
-                    class="bg-[#0A0A0A] rounded-full flex items-center justify-between p-2 pl-6 border border-[#212121] w-full max-w-[342px]"
+                <img src="logo.svg" alt="rely logo" />
+                <button
+                    class="px-[18px] py-4 flex items-center text-white gap-2 bg-[#121212] rounded-full"
                 >
-                    <img src="logo.svg" alt="rely logo" />
-                    <button
-                        class="px-[18px] py-4 flex items-center text-white gap-2 bg-[#121212] rounded-full"
-                    >
-                        <img src="/menu-icon.svg" alt="menu icon" />
-                        <span class="text-lg">Menu</span>
-                    </button>
-                </div>
-            </header>
+                    <img src="/menu-icon.svg" alt="menu icon" />
+                    <span class="text-lg">Menu</span>
+                </button>
+            </div>
+        </header>
+        <div id="smooth-wrapper">
             <div id="smooth-content">
                 <main class="flex flex-col overflow-x-hidden">
                     <section
@@ -34,12 +34,12 @@
                                 class="flex flex-col text-neutral-light w-full max-w-[948px] justify-self-center self-center"
                             >
                                 <h1
-                                    class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-5 sm:mb-7"
+                                    class="split-word text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-normal tracking-tight mb-5 sm:mb-7"
                                 >
                                     The premium path to financial privilege.
                                 </h1>
                                 <p
-                                    class="text-base sm:text-lg md:text-2xl max-w-[832px] mb-6 sm:mb-10"
+                                    class="split-line text-base sm:text-lg md:text-2xl max-w-[832px] mb-6 sm:mb-10"
                                 >
                                     Our revolutionary payment solution allows you to digitize your
                                     bank debit cards and consolidate them into one single,
@@ -47,7 +47,10 @@
                                 </p>
                                 <footer class="flex items-center justify-between">
                                     <button class="fancy-button bg-[#FFFBFA] text-black">
-                                        <span class="text">Request early access</span>
+                                        <div class="block overflow-hidden">
+                                            <p class="text">Request early access</p>
+                                            <p class="text">Join Waitlist now</p>
+                                        </div>
                                         <span class="icon bg-black">
                                             <svg
                                                 width="34"
@@ -89,11 +92,11 @@
                         <div class="w-full h-2 mb-4 bg-black" data-speed="1" data-lag="0.4"></div>
                         <div class="w-full h-1 mb-5 bg-black" data-speed="1" data-lag="0.5"></div>
                     </section>
-                    <section>
+                    <section id="future" class="overflow-hidden">
                         <div class="container">
                             <div class="pt-20 flex flex-col gap-16">
                                 <h2
-                                    class="text-neutral-light text-2xl sm:text-[32px] w-full max-w-[480px] mx-auto text-center"
+                                    class="split-line text-neutral-light text-2xl sm:text-[32px] w-full max-w-[480px] mx-auto text-center"
                                 >
                                     The future of card payment is here and now
                                 </h2>
@@ -105,12 +108,12 @@
                             </div>
                         </div>
                     </section>
-                    <section class="bg-white">
+                    <section class="bg-white" id="steps">
                         <div class="container py-28">
                             <div class="flex items-center flex-col lg:flex-row gap-10">
                                 <div class="grow flex justify-center">
                                     <ul
-                                        class="grid grid-cols-1 sm:grid-cols-2 justify-around gap-14 pl-10"
+                                        class="grid grid-cols-1 sm:grid-cols-2 justify-around gap-14 pl-10 items-baseline"
                                     >
                                         <li class="relative">
                                             <span
@@ -324,15 +327,16 @@
                                     </article>
                                 </div>
                                 <div
+                                    id="get-started"
                                     class="flex items-center flex-col lg:flex-row gap-10 bg-white bg-[url(/get-started-background.png)] rounded-[30px] px-5 sm:px-16 md:px-24 pt-10 md:pt-14"
                                 >
                                     <div class="grow">
                                         <h2
-                                            class="font-semibold text-3xl md:text-[40px] text-primary-blue max-w-[531px] mb-3"
+                                            class="split-word font-semibold text-3xl md:text-[40px] text-primary-blue max-w-[531px] mb-3"
                                         >
                                             Get started and download our mobile app
                                         </h2>
-                                        <p class="max-w-[375px] mb-5">
+                                        <p class="split-line max-w-[375px] mb-5">
                                             Download our mobile app now to enjoy our amazing
                                             features.
                                         </p>
@@ -384,16 +388,21 @@
                             ></span>
                         </div>
                     </section>
-                    <section class="bg-[url(/toggle-background.jpg)] bg-cover bg-center">
+                    <section
+                        id="toggle"
+                        class="bg-[url(/toggle-background.jpg)] bg-cover bg-center overflow-hidden"
+                    >
                         <div class="container py-24">
                             <div
                                 class="flex items-start justify-between gap-10 flex-col lg:flex-row"
                             >
                                 <article class="flex flex-col gap-4 max-w-[446px]">
-                                    <h2 class="text-white font-semibold text-2xl sm:text-[32px]">
+                                    <h2
+                                        class="split-word text-white font-semibold text-2xl sm:text-[32px] leading-tight"
+                                    >
                                         Bank on our secured Rely Cards for your transactions
                                     </h2>
-                                    <p class="text-neutral-light text-base sm:text-lg">
+                                    <p class="split-line text-neutral-light text-base sm:text-lg">
                                         Instantly toggle off or on when not in use.
                                     </p>
                                 </article>
@@ -459,11 +468,14 @@
                             </div>
                         </div>
                     </section>
-                    <section class="bg-white bg-[url(/our-app-background.svg)] bg-cover bg-center">
+                    <section
+                        id="our-app"
+                        class="bg-white bg-[url(/our-app-background.svg)] bg-cover bg-center"
+                    >
                         <div class="container">
                             <div class="pt-28 pb-16 flex flex-col gap-20">
                                 <h2
-                                    class="text-center font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[83px]"
+                                    class="split-word text-center font-semibold text-4xl sm:text-5xl md:text-6xl lg:text-[83px]"
                                 >
                                     Our App
                                 </h2>
@@ -531,10 +543,10 @@
                             </div>
                         </div>
                     </section>
-                    <section class="bg-[url(/alerts-background.svg)] bg-cover bg-center">
+                    <section id="alert" class="bg-[url(/alerts-background.svg)] bg-cover bg-center">
                         <div class="container">
                             <div
-                                class="flex flex-col-reverse md:flex-row gap-10 py-16 md:py-28 items-start justify-between"
+                                class="flex flex-col md:flex-row gap-10 py-16 md:py-28 items-start justify-between"
                             >
                                 <div class="flex flex-col gap-8">
                                     <img
@@ -544,7 +556,9 @@
                                     <img src="/debit-alert.svg" alt="debit alert notification" />
                                 </div>
                                 <div class="grow flex justify-center">
-                                    <h2 class="text-2xl text-neutral-light max-w-[399px]">
+                                    <h2
+                                        class="split-line text-2xl text-neutral-light max-w-[399px]"
+                                    >
                                         <span class="font-bold">Keep your money secure</span> with
                                         instant transaction notifications. Nothing gets past us.
                                     </h2>
@@ -552,11 +566,13 @@
                             </div>
                         </div>
                     </section>
-                    <section class="bg-[#F8F8F8] overflow-x-hidden">
+                    <section id="testimonial" class="bg-[#F8F8F8] overflow-x-hidden">
                         <header
                             class="container py-12 flex flex-col md:flex-row gap-6 md:items-center justify-between"
                         >
-                            <h2 class="text-3xl sm:text-[40px] max-w-[417px] font-semibold">
+                            <h2
+                                class="split-word text-3xl sm:text-[40px] max-w-[417px] font-semibold leading-tight"
+                            >
                                 See what people are saying about <span class="font-bold">Rely</span>
                             </h2>
                             <div class="flex items-center gap-6">
@@ -670,7 +686,7 @@
                             </div>
                         </div>
                     </section>
-                    <section>
+                    <section id="spotify">
                         <div
                             class="flex flex-col lg:flex-row justify-between lg:items-center gap-10"
                         >
@@ -680,10 +696,14 @@
                                 class="w-full max-w-[512px]"
                             />
                             <div class="flex flex-col w-full max-w-[553px] text-white px-5">
-                                <h2 class="text-3xl sm:text-4xl md:text-[40px] font-bold mb-3">
+                                <h2
+                                    class="split-word text-3xl sm:text-4xl md:text-[40px] font-bold mb-3 leading-tight"
+                                >
                                     Rave with our Spotify playlist
                                 </h2>
-                                <p class="text-[#FEFEFE] mb-6 sm:mb-12 text-sm sm:text-base">
+                                <p
+                                    class="split-line text-[#FEFEFE] mb-6 sm:mb-12 text-sm sm:text-base"
+                                >
                                     We have curated an amazing list of songs that best speaks how we
                                     can be perceived and represented. This list is updated weekly to
                                     keep the spirit alive and the energy up 100% at all times.
@@ -729,7 +749,7 @@
                             <img src="/burst.svg" alt="busrt graphic" class="self-end" />
                         </div>
                     </section>
-                    <section class="bg-white">
+                    <section class="bg-white" id="waitlist">
                         <div class="container">
                             <div class="flex flex-col items-center pt-28 pb-24 text-center">
                                 <h2
@@ -738,7 +758,7 @@
                                     Join our waitlist 🚀
                                 </h2>
                                 <h3
-                                    class="max-w-[793px] text-4xl md:text-[56px] font-semibold mb-7"
+                                    class="split-word max-w-[793px] text-4xl md:text-[56px] font-semibold mb-7 leading-tight"
                                 >
                                     We are launching soon, Get early access when we launch
                                 </h3>
@@ -827,8 +847,38 @@
                 </footer>
             </div>
         </div>
-        <aside id="loader"></aside>
+        <aside
+            id="loader"
+            class="grid place-items-center fixed z-20 bg-black inset-0 w-screen h-screen overflow-hidden"
+        >
+            <div id="cover" class="absolute inset-0 bg-white mix-blend-difference"></div>
+            <svg
+                width="264"
+                height="106"
+                viewBox="0 0 264 106"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.175293 0.896729H53.4853C65.7957 0.896729 75.7716 10.8764 75.7716 23.1831C75.7716 35.4934 65.792 45.4731 53.4853 45.4731H0.175293V0.896729Z"
+                    fill="white"
+                />
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.175217 101.973H75.5877L28.8569 66.6709L0.175217 46.385V101.973Z"
+                    fill="white"
+                />
+                <path
+                    d="M87.6988 75.5242V52.2494C88.0394 36.3544 101.21 26.3633 109.271 26.3633C113.017 26.3633 115.629 28.4069 115.629 32.8348V33.289C115.629 34.6514 114.947 38.171 110.974 39.5334C102.118 42.7124 101.323 49.411 101.323 58.6074C101.323 60.3104 101.55 64.5113 101.55 75.5242C101.55 79.9521 98.0305 82.2228 94.5109 82.2228C90.9913 82.2228 87.6988 80.0657 87.6988 75.5242ZM116.916 53.8389C116.916 36.695 131.108 23.8655 147.458 23.8655C150.523 23.8655 153.248 24.2061 156.313 25.1144C164.488 27.4986 170.165 32.6077 173.684 38.2845C177.204 43.9613 178.226 49.411 178.226 53.0442C178.226 54.1795 178.226 57.5856 176.296 59.5157C175.387 60.5375 174.366 61.1052 173.23 61.1052C172.662 61.1052 172.095 60.9917 171.414 60.7646C167.667 59.6292 163.807 59.0616 159.833 59.0616C156.654 59.0616 153.361 59.4022 150.296 60.1969C149.728 60.3104 149.161 60.424 148.593 60.424C146.095 60.424 143.597 58.1533 143.143 56.2232C143.03 55.2013 142.916 54.5201 142.916 54.066C142.916 52.0223 143.711 48.9569 147.798 48.1621C151.772 47.4809 155.746 47.0268 159.719 47.0268C160.628 47.0268 161.65 47.1403 162.671 47.1403C159.946 40.7823 153.816 37.6033 147.571 37.6033C141.327 37.6033 135.536 40.6688 132.471 46.6862C131.222 49.0704 130.654 51.4547 130.654 53.7254C130.654 54.7472 130.427 58.3803 133.606 62.8082C136.672 67.3497 141.781 70.188 147.571 70.188C150.296 70.188 152.907 69.5068 155.405 68.2579C156.427 67.6903 157.562 67.4632 158.584 67.4632C161.763 67.4632 164.488 69.961 165.056 72.1182C165.396 73.14 165.623 73.9347 165.623 74.6159C165.623 76.0919 165.396 78.5897 161.763 80.4063C157.108 82.677 152.453 83.6988 147.571 83.6988C131.676 83.6988 116.916 71.4369 116.916 53.8389ZM185.047 9.78708C185.047 5.13212 188.566 2.86141 192.086 2.86141C195.606 2.86141 199.012 5.13212 199.012 9.78708V75.2972C199.012 79.8386 195.606 82.2228 192.086 82.2228C188.566 82.2228 185.047 79.8386 185.047 75.2972V9.78708ZM208.109 56.9044V32.4942C208.109 27.9528 211.628 25.5685 215.148 25.5685C218.667 25.5685 222.074 27.8393 222.074 32.4942V56.9044C222.074 65.7602 228.659 70.0745 235.471 70.0745C242.283 70.0745 249.095 65.5331 249.095 56.9044V32.4942C249.095 27.9528 252.615 25.5685 256.134 25.5685C259.654 25.5685 263.06 27.8393 263.06 32.4942V74.2753C263.06 89.1485 251.933 105.043 232.405 105.043C227.523 105.043 222.187 104.135 216.283 101.864C212.309 100.389 211.855 97.6637 211.855 95.7336C211.855 94.5982 212.082 92.3275 214.467 90.0568C215.602 88.9214 216.964 88.3538 218.667 88.3538C219.689 88.3538 220.825 88.5808 221.846 89.1485C225.139 90.8515 228.318 91.5328 231.383 91.5328C238.763 91.5328 244.554 87.2184 247.278 81.8822C243.645 83.2446 239.899 83.9259 236.152 83.9259C221.619 83.9259 208.109 74.0483 208.109 56.9044Z"
+                    fill="white"
+                />
+            </svg>
+        </aside>
         <script src="/scroll-smoother.js"></script>
+        <script src="/split-text.js"></script>
         <script type="module" src="/main.js"></script>
     </body>
 </html>
