@@ -116,6 +116,19 @@ function positionElements() {
     );
 }
 
+function followCursor() {
+    const element = document.getElementById("follow-cursor");
+
+    window.addEventListener("mousemove", (e) => {
+        element.animate(
+            {
+                left: e.pageX + "px",
+                top: e.pageY + "px",
+            },
+            { duration: 400, fill: "forwards" }
+        );
+    });
+}
 addEventListener("DOMContentLoaded", marquee);
 
 addEventListener("DOMContentLoaded", backToTop);
@@ -125,6 +138,8 @@ addEventListener("DOMContentLoaded", swiperInit);
 addEventListener("DOMContentLoaded", splitText);
 
 addEventListener("DOMContentLoaded", positionElements);
+
+addEventListener("DOMContentLoaded", followCursor);
 
 addEventListener("load", () => {
     pageloaded = true;
@@ -187,6 +202,7 @@ function loader() {
 loader();
 
 function main() {
+    window.scrollTo(0, 0);
     function headerAnimation() {
         gsap.to("header>div", { y: 0, opacity: 1, ease: "expo.out", duration: 2 });
     }
@@ -425,51 +441,6 @@ function main() {
         });
     }
 
-    function ourApp() {
-        gsap.to("#our-app h2 .word", {
-            y: 0,
-            opacity: 1,
-            stagger: { each: 0.05, from: "start" },
-            ease: "power3.out",
-            duration: 0.8,
-            scrollTrigger: {
-                trigger: "#our-app",
-                start: "top center",
-            },
-        });
-
-        gsap.from("#our-app > .container > div > div > img", {
-            y: "300%",
-            opacity: 1,
-            ease: "expo.out",
-            duration: 2,
-            scale: 0.8,
-            scrollTrigger: {
-                trigger: "#our-app > .container",
-                start: "center center",
-            },
-        });
-
-        const articles = document.querySelectorAll("#our-app article");
-
-        articles.forEach((article) => {
-            const timeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: article,
-                    start: "top 75%",
-                },
-            });
-
-            timeline.from(article.children, {
-                opacity: 0,
-                y: "300%",
-                stagger: 0.25,
-                duration: 1.5,
-                ease: "expo.out",
-            });
-        });
-    }
-
     function alert() {
         const alertTimeline = gsap.timeline({
             scrollTrigger: {
@@ -624,6 +595,17 @@ function main() {
 
     function fancyButton() {
         const fancyButtons = document.querySelectorAll(".fancy-button");
+        const element = document.getElementById("follow-cursor");
+        const buttons = document.querySelectorAll("button");
+
+        buttons.forEach((button) => {
+            button.onmouseenter = () => {
+                gsap.to(element, { scale: 1, opacity: 1 });
+            };
+            button.onmouseleave = () => {
+                gsap.to(element, { scale: 0, opacity: 0 });
+            };
+        });
 
         fancyButtons.forEach((button) => {
             const mainText = button.querySelector(".text-main");
@@ -631,11 +613,13 @@ function main() {
             const background = button.querySelector(".background");
 
             button.onmouseenter = () => {
+                gsap.to(element, { scale: 1, opacity: 1 });
                 gsap.to(mainText, { y: "-100%", ease: "expo.out", duration: 1.1 });
                 gsap.to(underText, { y: "-100%", ease: "expo.out", duration: 1.1 });
                 gsap.to(background, { scaleY: 1, ease: "expo.out" });
             };
             button.onmouseleave = () => {
+                gsap.to(element, { scale: 0, opacity: 0 });
                 gsap.to(mainText, { y: "0%", ease: "expo.out", duration: 1.1 });
                 gsap.to(underText, { y: "0%", ease: "expo.out", duration: 1.1 });
                 gsap.to(background, { scaleY: 0, ease: "expo.out", duration: 1.1 });
@@ -650,7 +634,6 @@ function main() {
     cards();
     getStarted();
     toggle();
-    ourApp();
     alert();
     testimonial();
     spotify();
