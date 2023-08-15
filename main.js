@@ -8,53 +8,63 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-// gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-// let smoother = ScrollSmoother.create({
-//     smooth: 1.5,
-//     effects: true,
-//     normalizeScroll: true,
-//     wrapper: "#smooth-wrapper",
-//     content: "#smooth-content",
-// });
+let smoother = ScrollSmoother.create({
+    smooth: 1.5,
+    effects: true,
+    normalizeScroll: true,
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+});
 
-// // HTML Divs Loaded
-// window.addEventListener("DOMContentLoaded", (event) => {
-//     ScrollTrigger.refresh();
-// });
-// // All images and assets loaded
-// document.addEventListener("load", function () {
-//     ScrollTrigger.refresh();
-// });
+const backToTopButton = document.getElementById("back-to-top");
 
-// function marquee() {
-//     const container = document.getElementById("marquee");
-//     const totalDistance = container.clientWidth;
-//     gsap.to(container, {
-//         repeat: -1,
-//         x: "-" + totalDistance,
-//         ease: Linear.easeNone,
-//         duration: 10,
-//     });
-// }
+backToTopButton.onclick = () => {
+    gsap.to(smoother, {
+        scrollTop: smoother.offset("#hero", "top top"),
+        duration: 2,
+        ease: "expo.inOut",
+    });
+};
 
-// addEventListener("DOMContentLoaded", marquee);
+// HTML Divs Loaded
+window.addEventListener("DOMContentLoaded", (event) => {
+    ScrollTrigger.refresh();
+});
+// All images and assets loaded
+document.addEventListener("load", function () {
+    ScrollTrigger.refresh();
+});
 
-// addEventListener("DOMContentLoaded", () => {
-//     const prevButton = document.querySelector("button#prev");
-//     const nextButton = document.querySelector("button#next");
-//     const swiper = new Swiper(".testimonial-swiper", {
-//         modules: [Navigation],
-//         slidesPerView: "auto",
-//         spaceBetween: 48,
-//     });
+function marquee() {
+    const container = document.getElementById("marquee");
+    const totalDistance = container.clientWidth;
+    gsap.to(container, {
+        repeat: -1,
+        x: "-" + totalDistance,
+        ease: Linear.easeNone,
+        duration: 10,
+    });
+}
 
-//     prevButton.onclick = () => {
-//         console.log("prev");
-//         swiper.slidePrev();
-//     };
-//     nextButton.onclick = () => {
-//         console.log("next");
-//         swiper.slideNext();
-//     };
-// });
+addEventListener("DOMContentLoaded", marquee);
+
+addEventListener("DOMContentLoaded", () => {
+    const prevButton = document.querySelector("button#prev");
+    const nextButton = document.querySelector("button#next");
+    const swiper = new Swiper(".testimonial-swiper", {
+        modules: [Navigation],
+        slidesPerView: "auto",
+        spaceBetween: 48,
+    });
+
+    prevButton.onclick = () => {
+        console.log("prev");
+        swiper.slidePrev();
+    };
+    nextButton.onclick = () => {
+        console.log("next");
+        swiper.slideNext();
+    };
+});

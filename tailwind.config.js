@@ -19,7 +19,7 @@ export default {
             container: {
                 center: true,
                 padding: {
-                    DEFUALT: "20px",
+                    DEFAULT: "20px",
                 },
             },
             fontFamily: {
