@@ -555,6 +555,27 @@ function main() {
             );
     }
 
+    function fancyButton() {
+        const fancyButtons = document.querySelectorAll(".fancy-button");
+
+        fancyButtons.forEach((button) => {
+            const mainText = button.querySelector(".text-main");
+            const underText = button.querySelector(".text-under");
+            const background = button.querySelector(".background");
+
+            button.onmouseenter = () => {
+                gsap.to(mainText, { y: "-100%", ease: "expo.out", duration: 1.1 });
+                gsap.to(underText, { y: "-100%", ease: "expo.out", duration: 1.1 });
+                gsap.to(background, { scaleY: 1, ease: "expo.out" });
+            };
+            button.onmouseleave = () => {
+                gsap.to(mainText, { y: "0%", ease: "expo.out", duration: 1.1 });
+                gsap.to(underText, { y: "0%", ease: "expo.out", duration: 1.1 });
+                gsap.to(background, { scaleY: 0, ease: "expo.out", duration: 1.1 });
+            };
+        });
+    }
+
     headerAnimation();
     heroAnimation();
     future();
@@ -566,4 +587,5 @@ function main() {
     testimonial();
     spotify();
     waitlist();
+    fancyButton();
 }
