@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <link rel="icon" type="image/svg+xml" href="/rely.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Vite App</title>
+        <title>Rely</title>
     </head>
     <body>
         <div id="smooth-wrapper">
@@ -19,7 +19,7 @@
                     <span class="text-lg">Menu</span>
                 </button>
             </header>
-            <main class="grid" id="smooth-content">
+            <main class="flex flex-col overflow-x-hidden" id="smooth-content">
                 <section
                     id="hero"
                     class="text-white self-center bg-cover bg-center min-h-screen grid bg-[url(/hero-background.png)]"
@@ -275,7 +275,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="overflow-hidden mb-16">
+                <section class="overflow-hidden w-screen mb-16">
                     <div
                         id="marquee"
                         class="flex items-center gap-16 whitespace-nowrap font-semibold"
@@ -455,7 +455,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="bg-[#F8F8F8]">
+                <!-- <section class="bg-[#F8F8F8] overflow-x-hidden">
                     <header class="container py-12 flex items-center justify-between">
                         <h2 class="text-[40px] max-w-[417px] font-semibold">
                             See what people are saying about <span class="font-bold">Rely</span>
@@ -483,6 +483,128 @@
                             </button>
                         </div>
                     </header>
+                    <div class="testimonial-swiper mb-6">
+                        <div class="swiper-wrapper items-stretch">
+                            <div class="swiper-slide max-w-[626px] !h-auto">
+                                <div
+                                    class="rounded-[20px] bg-white py-14 pr-16 pl-32 grid grid-cols-[auto_auto] gap-8 font-inter h-full"
+                                >
+                                    <span class="w-0.5 min-h-[220px] bg-[#D4D6DA] block"></span>
+                                    <p class="text-[26px]">
+                                        I have been banking with Rely for the last six years … I am
+                                        so glad that I made the move and have saved so much money in
+                                        fees!! Best thing to happen to me in 2020—managing my cards
+                                        is now enjoyable.
+                                    </p>
+                                    <span></span>
+                                    <div class="flex gap-5 items-center">
+                                        <span class="w-16 h-1 bg-primary-blue block"></span>
+                                        <span class="font-bold text-primary-blue">A.G.</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide max-w-[626px] !h-auto">
+                                <div
+                                    class="rounded-[20px] bg-white py-14 pr-16 pl-32 grid grid-cols-[auto_auto] gap-8 font-inter h-full"
+                                >
+                                    <span class="w-0.5 min-h-[220px] bg-[#D4D6DA] block"></span>
+                                    <p class="text-[26px]">
+                                        Fantastic customer service. I shifted from a traditional
+                                        bank to Sable [and] Sable's customer service helped me
+                                        answer all the questions that I needed to switch.
+                                    </p>
+                                    <span></span>
+                                    <div class="flex gap-5 items-center">
+                                        <span class="w-16 h-1 bg-primary-blue block"></span>
+                                        <span class="font-bold text-primary-blue">K Oiwake</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide max-w-[626px] !h-auto">
+                                <div
+                                    class="rounded-[20px] bg-white py-14 pr-16 pl-32 grid grid-cols-[auto_auto] gap-8 font-inter h-full"
+                                >
+                                    <span class="w-0.5 min-h-[220px] bg-[#D4D6DA] block"></span>
+                                    <p class="text-[26px]">
+                                        Fantastic customer service. I shifted from a traditional
+                                        bank to Sable [and] Sable's customer service helped me
+                                        answer all the questions that I needed to switch.
+                                    </p>
+                                    <span></span>
+                                    <div class="flex gap-5 items-center">
+                                        <span class="w-16 h-1 bg-primary-blue block"></span>
+                                        <span class="font-bold text-primary-blue">K Oiwake</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide max-w-[626px] !h-auto">
+                                <div
+                                    class="rounded-[20px] bg-white py-14 pr-16 pl-32 grid grid-cols-[auto_auto] gap-8 font-inter h-full"
+                                >
+                                    <span class="w-0.5 min-h-[220px] bg-[#D4D6DA] block"></span>
+                                    <p class="text-[26px]">
+                                        Fantastic customer service. I shifted from a traditional
+                                        bank to Sable [and] Sable's customer service helped me
+                                        answer all the questions that I needed to switch.
+                                    </p>
+                                    <span></span>
+                                    <div class="flex gap-5 items-center">
+                                        <span class="w-16 h-1 bg-primary-blue block"></span>
+                                        <span class="font-bold text-primary-blue">K Oiwake</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section> -->
+                <section>
+                    <div class="flex justify-between items-center">
+                        <img
+                            src="/spotify-graphic.png"
+                            alt="spotify graphic"
+                            class="w-full max-w-[512px]"
+                        />
+                        <div class="flex flex-col w-full max-w-[553px] text-white">
+                            <h2 class="text-[40px] font-bold mb-3">
+                                Rave with our Spotify playlist
+                            </h2>
+                            <p class="text-[#FEFEFE] mb-12">
+                                We have curated an amazing list of songs that best speaks how we can
+                                be perceived and represented. This list is updated weekly to keep
+                                the spirit alive and the energy up 100% at all times.
+                            </p>
+                            <div class="flex items-center gap-6">
+                                <button
+                                    class="flex items-center gap-1 px-11 py-4 rounded-full bg-[#78D852]"
+                                >
+                                    <img src="/play-button.svg" alt="play button" />
+                                    <span class="uppercase text-black text-sm">Listen now</span>
+                                </button>
+                                <div class="items-center flex">
+                                    <div
+                                        class="grow shrink basis-0 justify-between items-start flex"
+                                    >
+                                        <img
+                                            src="avatar-1.jpg"
+                                            class="w-[38px] h-[38px] rounded-full border-2 border-white object-center object-cover"
+                                        />
+                                        <img
+                                            src="avatar-2.jpg"
+                                            class="w-[38px] h-[38px] rounded-full border-2 border-white object-center object-cover relative -left-2"
+                                        />
+                                        <img
+                                            src="avatar-3.jpg"
+                                            class="w-[38px] h-[38px] rounded-full border-2 border-white object-center object-cover relative -left-4"
+                                        />
+                                    </div>
+                                    <div class="text-white text-lg font-normal">
+                                        +860 Users Listening
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <img src="/burst.svg" alt="busrt graphic" />
+                    </div>
                 </section>
             </main>
         </div>

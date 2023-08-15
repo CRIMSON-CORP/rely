@@ -1,6 +1,12 @@
 import "./style.css";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-// import { Linear, gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Linear, gsap } from "gsap";
+
+import Swiper from "swiper";
+import { Navigation } from "swiper/modules";
+// import Swiper and modules styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 // gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -33,3 +39,22 @@ import "./style.css";
 // }
 
 // addEventListener("DOMContentLoaded", marquee);
+
+// addEventListener("DOMContentLoaded", () => {
+//     const prevButton = document.querySelector("button#prev");
+//     const nextButton = document.querySelector("button#next");
+//     const swiper = new Swiper(".testimonial-swiper", {
+//         modules: [Navigation],
+//         slidesPerView: "auto",
+//         spaceBetween: 48,
+//     });
+
+//     prevButton.onclick = () => {
+//         console.log("prev");
+//         swiper.slidePrev();
+//     };
+//     nextButton.onclick = () => {
+//         console.log("next");
+//         swiper.slideNext();
+//     };
+// });

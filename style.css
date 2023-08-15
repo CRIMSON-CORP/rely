@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,regular,500,600,700,800);
-@import url(https://fonts.googleapis.com/css?family=Inter:500);
+@import url(https://fonts.googleapis.com/css?family=Inter:500,700);
 
 @tailwind base;
 @tailwind components;
@@ -22,6 +22,6 @@
     }
 
     body {
-        @apply bg-black min-h-screen grid;
+        @apply bg-black min-h-screen grid overflow-x-hidden;
     }
 }
