@@ -18,20 +18,11 @@ let smoother = ScrollSmoother.create({
 
 ScrollTrigger.normalizeScroll(true);
 
-const backToTopButton = document.getElementById("back-to-top");
-
-backToTopButton.onclick = () => {
-    gsap.to(smoother, {
-        scrollTop: smoother.offset("#hero", "top top"),
-        duration: 2,
-        ease: "expo.inOut",
-    });
-};
-
 // HTML Divs Loaded
 window.addEventListener("DOMContentLoaded", (event) => {
     ScrollTrigger.refresh();
 });
+
 // All images and assets loaded
 document.addEventListener("load", function () {
     ScrollTrigger.refresh();
@@ -48,11 +39,21 @@ function marquee() {
     });
 }
 
-addEventListener("DOMContentLoaded", marquee);
+function backToTop() {
+    const backToTopButton = document.getElementById("back-to-top");
 
-addEventListener("DOMContentLoaded", () => {
-    const prevButton = document.querySelector("button#prev");
-    const nextButton = document.querySelector("button#next");
+    backToTopButton.onclick = () => {
+        gsap.to(smoother, {
+            scrollTop: smoother.offset("#hero", "top top"),
+            duration: 2,
+            ease: "expo.inOut",
+        });
+    };
+}
+
+function swiperInit() {
+    const prevButton = document.getElementById("prev");
+    const nextButton = document.getElementById("next");
     const swiper = new Swiper(".testimonial-swiper", {
         modules: [Navigation],
         slidesPerView: "auto",
@@ -67,4 +68,10 @@ addEventListener("DOMContentLoaded", () => {
         console.log("next");
         swiper.slideNext();
     };
-});
+}
+
+addEventListener("DOMContentLoaded", marquee);
+
+addEventListener("DOMContentLoaded", backToTop);
+
+addEventListener("DOMContentLoaded", swiperInit);
