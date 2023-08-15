@@ -627,6 +627,18 @@ function main() {
         });
     }
 
+    function animatedCheckboxes() {
+        const checkboxes = document.querySelectorAll("#toggle input[type=checkbox]");
+
+        let isChecked = false;
+
+        setInterval(() => {
+            isChecked = !isChecked;
+            checkboxes[0].checked = isChecked;
+            checkboxes[1].checked = !isChecked;
+        }, 2000);
+    }
+
     headerAnimation();
     heroAnimation();
     future();
@@ -639,4 +651,5 @@ function main() {
     spotify();
     waitlist();
     fancyButton();
+    animatedCheckboxes();
 }
