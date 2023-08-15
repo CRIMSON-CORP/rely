@@ -268,6 +268,72 @@ function main() {
         });
     }
 
+    function cards() {
+        const articleCards = document.querySelectorAll("#cards article");
+        articleCards.forEach((card, index) => {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: card,
+                    start: "top center",
+                },
+            });
+
+            timeline
+                .from(card, {
+                    opacity: 0,
+                    y: "50%",
+                    ease: "back.out",
+                    duration: 1.5,
+                    delay: index * 0.25,
+                })
+                .to(
+                    card.children[0].children,
+                    {
+                        y: 0,
+                        opacity: 1,
+                        stagger: { each: 0.05, from: "start" },
+                        ease: "power3.out",
+                        duration: 0.8,
+                    },
+                    "-=1"
+                )
+                .to(
+                    card.children[1].children,
+                    {
+                        opacity: 1,
+                        scale: 1,
+                        y: 0,
+                        ease: "power3.out",
+                        duration: 1.5,
+                        stagger: { each: 0.1, from: "start" },
+                    },
+                    "-=1"
+                )
+                .from(
+                    card.children[2],
+                    {
+                        y: "100%",
+                        opacity: 0,
+                        duration: 1.5,
+                        ease: "expo.out",
+                    },
+                    "-=1"
+                );
+            if (card.children[3]) {
+                timeline.from(
+                    card.children[3],
+                    {
+                        y: "100%",
+                        opacity: 0,
+                        duration: 1.5,
+                        ease: "expo.out",
+                    },
+                    "-=1"
+                );
+            }
+        });
+    }
+
     function getStarted() {
         const timeline = gsap.timeline({
             scrollTrigger: {
@@ -398,7 +464,8 @@ function main() {
                 opacity: 0,
                 y: "300%",
                 stagger: 0.25,
-                ease: "power3.out",
+                duration: 1.5,
+                ease: "expo.out",
             });
         });
     }
@@ -580,6 +647,7 @@ function main() {
     heroAnimation();
     future();
     steps();
+    cards();
     getStarted();
     toggle();
     ourApp();
