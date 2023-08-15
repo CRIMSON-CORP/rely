@@ -25,3 +25,17 @@
         @apply bg-black min-h-screen grid overflow-x-hidden;
     }
 }
+
+@layer components {
+    .fancy-button {
+        @apply p-1 sm:p-2 rounded-full flex items-center;
+    }
+
+    .fancy-button span.text {
+        @apply grow px-2 sm:px-3 text-sm;
+    }
+
+    .fancy-button span.icon {
+        @apply grid place-items-center rounded-full w-10 h-10 sm:w-14 sm:h-14;
+    }
+}

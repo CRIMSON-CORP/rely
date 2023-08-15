@@ -4,7 +4,6 @@ import { Linear, gsap } from "gsap";
 
 import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
-// import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -13,10 +12,11 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 let smoother = ScrollSmoother.create({
     smooth: 1.5,
     effects: true,
-    normalizeScroll: true,
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
 });
+
+ScrollTrigger.normalizeScroll(true);
 
 const backToTopButton = document.getElementById("back-to-top");
 
