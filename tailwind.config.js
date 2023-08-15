@@ -7,6 +7,9 @@ export default {
                 neutral: {
                     light: "#D0D5DD",
                 },
+                primary: {
+                    blue: "#001E78",
+                },
             },
             container: {
                 center: true,
@@ -16,6 +19,7 @@ export default {
             },
             fontFamily: {
                 sans: ["Open Sans", "ssans-serif"],
+                inter: ["Inter", "sans-serif"],
             },
         },
     },
