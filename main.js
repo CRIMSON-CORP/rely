@@ -173,6 +173,7 @@ function loader() {
     });
 
     logoTimeline
+        .to("#load-cover", { opacity: 0, pointerEvents: "none", duration: 0 })
         .to(topR, { rotate: 0, opacity: 1, delay: 1 })
         .to(bottomR, { rotate: 0, opacity: 1 })
         .to(text, {
@@ -596,7 +597,7 @@ function main() {
     function fancyButton() {
         const fancyButtons = document.querySelectorAll(".fancy-button");
         const element = document.getElementById("follow-cursor");
-        const buttons = document.querySelectorAll("button");
+        const buttons = document.querySelectorAll("button, a.button");
 
         buttons.forEach((button) => {
             button.onmouseenter = () => {

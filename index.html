@@ -723,8 +723,10 @@
                                 <div
                                     class="flex flex-col sm:flex-row items-start sm:items-center gap-6"
                                 >
-                                    <button
-                                        class="flex items-center gap-1 px-11 py-4 rounded-full bg-[#78D852] whitespace-nowrap"
+                                    <a
+                                        target="_blank"
+                                        href="https://open.spotify.com/playlist/3AypVI39RU880hTNR3f5SB?si=9824c87e68a94324"
+                                        class="button flex items-center gap-1 px-11 py-4 rounded-full bg-[#78D852] whitespace-nowrap"
                                     >
                                         <img
                                             src="/play-button.svg"
@@ -732,7 +734,7 @@
                                             class="self-start"
                                         />
                                         <span class="uppercase text-black text-sm">Listen now</span>
-                                    </button>
+                                    </a>
                                     <div class="items-center flex">
                                         <div
                                             class="grow shrink basis-0 justify-between items-start flex"
@@ -904,6 +906,17 @@
             id="follow-cursor"
             class="z-40 w-28 h-28 rounded-full bg-white absolute hidden md:inline pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference scale-0 opacity-0"
         ></span>
+        <div
+            id="load-cover"
+            style="
+                position: fixed;
+                z-index: 9999;
+                background-color: black;
+                width: 100vw;
+                height: 100vh;
+                inset: 0;
+            "
+        ></div>
         <script src="/scroll-smoother.js"></script>
         <script src="/split-text.js"></script>
         <script type="module" src="/main.js"></script>
