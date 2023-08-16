@@ -145,14 +145,13 @@ addEventListener("DOMContentLoaded", backToTop);
 
 addEventListener("DOMContentLoaded", swiperInit);
 
-addEventListener("DOMContentLoaded", splitText);
-
 addEventListener("DOMContentLoaded", positionElements);
 
 addEventListener("DOMContentLoaded", followCursor);
 
 addEventListener("load", () => {
     pageloaded = true;
+    splitText();
 });
 
 function loader() {
@@ -205,7 +204,7 @@ function loader() {
                     gsap.to(loader, {
                         y: "-100%",
                         onComplete: main,
-                        duration: 1.5,
+                        duration: 1.25,
                         ease: "expo.in",
                     });
                 }
@@ -222,7 +221,7 @@ function loader() {
                     gsap.to(loader, {
                         y: "-100%",
                         onComplete: main,
-                        duration: 1.5,
+                        duration: 1.25,
                         ease: "expo.in",
                     });
                 }
@@ -354,7 +353,7 @@ function main() {
                         duration: 1.5,
                         stagger: { each: 0.1, from: "start" },
                     },
-                    "-=1"
+                    "-=1.75"
                 )
                 .from(
                     card.children[2],
