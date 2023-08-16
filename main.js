@@ -6,6 +6,7 @@ import Swiper from "swiper";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import SplitType from "split-type";
 
 gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
@@ -75,25 +76,33 @@ function swiperInit() {
 function splitText() {
     const allWords = [];
     const allLines = [];
+    const allChars = [];
     const splitWordText = document.querySelectorAll(".split-word");
     const splitLineText = document.querySelectorAll(".split-line");
+    const splitCharText = document.querySelectorAll(".split-char");
 
     splitWordText.forEach((text) => {
-        const words = new SplitText(text, {
+        const words = new SplitType(text, {
             type: "words",
-            wordsClass: "word",
         });
 
         allWords.push(...words.words);
     });
 
     splitLineText.forEach((text) => {
-        const lines = new SplitText(text, {
-            type: "lines",
-            linesClass: "line",
+        const lines = new SplitType(text, {
+            type: "words",
         });
 
         allLines.push(...lines.lines);
+    });
+
+    splitCharText.forEach((text) => {
+        const lines = new SplitType(text, {
+            type: "chars",
+        });
+
+        allChars.push(...lines.chars);
     });
 
     gsap.set(allWords, { y: "100%", opacity: 0 });
@@ -101,6 +110,7 @@ function splitText() {
 }
 
 function positionElements() {
+    window.scrollTo(0, 0);
     gsap.set("header>div", { y: "-200%", opacity: 0 });
     gsap.set("#alert > .container > div > div > img:nth-child(1)", {
         x: "-200%",
@@ -185,7 +195,22 @@ function loader() {
 
     coverTimeline
         .to(cover, { scaleX: 1, delay: 0 })
-        .to(cover, { scaleX: 0, delay: 0, transformOrigin: "left" })
+        .to(cover, {
+            scaleX: 0,
+            delay: 0,
+            transformOrigin: "left",
+            onComplete() {
+                if (pageloaded) {
+                    coverTimeline.kill();
+                    gsap.to(loader, {
+                        y: "-100%",
+                        onComplete: main,
+                        duration: 1.5,
+                        ease: "expo.in",
+                    });
+                }
+            },
+        })
         .to(cover, { scaleX: 1, delay: 1, delay: 0.75 })
         .to(cover, {
             scaleX: 0,
@@ -194,7 +219,12 @@ function loader() {
             onComplete() {
                 if (pageloaded) {
                     coverTimeline.kill();
-                    gsap.to(loader, { y: "-100%", onComplete: main });
+                    gsap.to(loader, {
+                        y: "-100%",
+                        onComplete: main,
+                        duration: 1.5,
+                        ease: "expo.in",
+                    });
                 }
             },
         });
@@ -304,7 +334,7 @@ function main() {
                     delay: index * 0.25,
                 })
                 .to(
-                    card.children[0].children,
+                    card.querySelectorAll(".word"),
                     {
                         y: 0,
                         opacity: 1,
@@ -315,7 +345,7 @@ function main() {
                     "-=1"
                 )
                 .to(
-                    card.children[1].children,
+                    card.querySelectorAll(".line"),
                     {
                         opacity: 1,
                         scale: 1,
@@ -383,15 +413,6 @@ function main() {
                 "#get-started button",
                 { opacity: 0, y: "100%", ease: "power3.out", duration: 2 },
                 "-=1"
-            )
-            .from(
-                "#get-started img",
-                {
-                    y: "100%",
-                    ease: "expo.out",
-                    duration: 2,
-                },
-                "-=2.25"
             );
     }
 
@@ -529,7 +550,7 @@ function main() {
         const contenTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: "#spotify > div",
-                start: "top 75%",
+                start: "top center",
             },
         });
 
