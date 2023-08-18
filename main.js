@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 // All images and assets loaded
 document.addEventListener("load", function () {
     ScrollTrigger.refresh();
+    window.scrollTo(0, 0);
 });
 
 function marquee() {
@@ -549,7 +550,7 @@ function main() {
         const contenTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: "#spotify > div",
-                start: "top center",
+                start: "20% center",
             },
         });
 
@@ -573,18 +574,22 @@ function main() {
                 },
                 "-=0.5"
             )
-            .from("#spotify > div > div > p + div > *", {
-                y: "100%",
-                opacity: 0,
-                stagger: 0.25,
-            });
+            .from(
+                "#spotify > div > div > p + div > *",
+                {
+                    y: "100%",
+                    opacity: 0,
+                    stagger: 0.25,
+                },
+                "-=0.75"
+            );
     }
 
     function waitlist() {
         const timeline = gsap.timeline({
             scrollTrigger: {
                 trigger: "#waitlist",
-                start: "top 75%",
+                start: "20% center",
             },
         });
 
@@ -595,13 +600,17 @@ function main() {
                 duration: 1.5,
                 ease: "expo.out",
             })
-            .to("#waitlist > div  h3 .word", {
-                y: 0,
-                opacity: 1,
-                stagger: { each: 0.05, from: "start" },
-                ease: "power3.out",
-                duration: 0.8,
-            })
+            .to(
+                "#waitlist > div  h3 .word",
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: { each: 0.05, from: "start" },
+                    ease: "power3.out",
+                    duration: 0.8,
+                },
+                "-=0.75"
+            )
             .from(
                 "#waitlist > div  button",
                 {
