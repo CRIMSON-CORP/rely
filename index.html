@@ -13,15 +13,34 @@
             class="fixed z-10 left-1/2 top-6 sm:top-12 -translate-x-1/2 px-5 w-full grid place-items-center"
         >
             <div
-                class="bg-[#0A0A0A] rounded-full flex items-center justify-between p-2 pl-6 border border-[#212121] w-full max-w-[342px]"
+                class="relative bg-[#0A0A0A] rounded-full flex items-center justify-between p-2 pl-6 border border-[#212121] w-full max-w-[342px]"
             >
                 <img src="logo.svg" alt="rely logo" />
                 <button
+                    id="menu-button"
                     class="px-[18px] py-4 flex items-center text-white gap-2 bg-[#121212] rounded-full"
                 >
                     <img src="/menu-icon.svg" alt="menu icon" />
                     <span class="text-lg">Menu</span>
                 </button>
+                <nav id="menu-dropdown" data-nav-open="false" class="">
+                    <ul class="text-white flex flex-col gap-2 p-3">
+                        <li>
+                            <a
+                                href="/teams.html"
+                                class="button text-xl font-semibold p-2 rounded-xl hover:bg-white hover:text-black w-full block duration-300 ease-out"
+                                >Meet the team</a
+                            >
+                        </li>
+                        <li style="--delay: 125ms">
+                            <a
+                                href="/contact.html"
+                                class="button text-xl font-semibold p-2 rounded-xl hover:bg-white hover:text-black w-full block duration-300 ease-out"
+                                >Contact us</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </header>
         <div id="smooth-wrapper">
@@ -873,7 +892,7 @@
                 </footer>
             </div>
         </div>
-        <aside
+        <!-- <aside
             id="loader"
             class="grid place-items-center fixed z-20 bg-black inset-0 w-screen h-screen overflow-hidden"
         >
@@ -902,12 +921,12 @@
                     fill="white"
                 />
             </svg>
-        </aside>
+        </aside> -->
         <span
             id="follow-cursor"
             class="z-40 w-28 h-28 rounded-full bg-white absolute hidden md:inline pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference scale-0 opacity-0"
         ></span>
-        <div
+        <!-- <div
             id="load-cover"
             style="
                 position: fixed;
@@ -917,7 +936,7 @@
                 height: 100vh;
                 inset: 0;
             "
-        ></div>
+        ></div> -->
         <script src="/scroll-smoother.js"></script>
         <script type="module" src="/main.js"></script>
     </body>

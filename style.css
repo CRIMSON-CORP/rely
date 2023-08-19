@@ -39,3 +39,21 @@
         @apply grid place-items-center rounded-full w-10 h-10 sm:w-14 sm:h-14;
     }
 }
+
+#menu-dropdown {
+    @apply w-full absolute top-full mt-2 left-0 border border-[#212121] bg-[#0A0A0A] rounded-2xl opacity-0 scale-75 -translate-y-5 overflow-hidden transition-all duration-500 ease-in delay-100;
+}
+
+#menu-dropdown li {
+    @apply opacity-0 translate-y-20 delay-0 ease-[cubic-bezier(.19,.72,.16,.99)] transition-all duration-[1250ms];
+}
+
+@layer overide {
+    #menu-dropdown.open {
+        @apply !opacity-100 !translate-y-0 !scale-100 !delay-0 !ease-[cubic-bezier(.12,.69,.16,.99)] !duration-1000;
+    }
+
+    #menu-dropdown.open li {
+        @apply !opacity-100 !translate-y-0 !delay-[calc(var(--delay,0ms)_+_350ms)];
+    }
+}
