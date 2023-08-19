@@ -12,6 +12,8 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 let pageloaded = false;
 
+const pageName = location.pathname.replace("/", "").replace(".html", "");
+
 let smoother = ScrollSmoother.create({
     smooth: 1.5,
     effects: true,
@@ -65,11 +67,9 @@ function swiperInit() {
     });
 
     prevButton.onclick = () => {
-        console.log("prev");
         swiper.slidePrev();
     };
     nextButton.onclick = () => {
-        console.log("next");
         swiper.slideNext();
     };
 }
@@ -112,19 +112,22 @@ function splitText() {
 
 function positionElements() {
     window.scrollTo(0, 0);
+
     gsap.set("header>div", { y: "-200%", opacity: 0 });
-    gsap.set("#alert > .container > div > div > img:nth-child(1)", {
-        x: "-200%",
-        opacity: 0,
-        scale: 1.2,
-    });
-    gsap.set("#alert > .container > div > div > img:nth-child(2)", { y: -164 });
-    gsap.set("#hero button", { opacity: 0, y: "100%", ease: "power3.out", duration: 2 }, "-=1");
-    gsap.set(
-        "#hero button + img",
-        { opacity: 0, y: "100%", ease: "power3.out", duration: 2 },
-        "-=1.85"
-    );
+    if (pageName === "") {
+        gsap.set("#alert > .container > div > div > img:nth-child(1)", {
+            x: "-200%",
+            opacity: 0,
+            scale: 1.2,
+        });
+        gsap.set("#alert > .container > div > div > img:nth-child(2)", { y: -164 });
+        gsap.set("#hero button", { opacity: 0, y: "100%", ease: "power3.out", duration: 2 }, "-=1");
+        gsap.set(
+            "#hero button + img",
+            { opacity: 0, y: "100%", ease: "power3.out", duration: 2 },
+            "-=1.85"
+        );
+    }
 }
 
 function followCursor() {
@@ -140,11 +143,14 @@ function followCursor() {
         );
     });
 }
-addEventListener("DOMContentLoaded", marquee);
 
 addEventListener("DOMContentLoaded", backToTop);
 
-addEventListener("DOMContentLoaded", swiperInit);
+if (pageName === "") {
+    addEventListener("DOMContentLoaded", swiperInit);
+
+    addEventListener("DOMContentLoaded", marquee);
+}
 
 addEventListener("DOMContentLoaded", positionElements);
 
@@ -685,17 +691,21 @@ function main() {
     }
 
     headerAnimation();
-    heroAnimation();
-    future();
-    steps();
-    cards();
-    getStarted();
-    toggle();
-    alert();
-    testimonial();
-    spotify();
-    waitlist();
-    fancyButton();
-    animatedCheckboxes();
     headerDropDown();
+    fancyButton();
+
+    if (pageName === "") {
+        heroAnimation();
+        future();
+        steps();
+        cards();
+        getStarted();
+        toggle();
+        alert();
+        testimonial();
+        spotify();
+        animatedCheckboxes();
+    } else if (pageName === "teams") {
+        waitlist();
+    }
 }
