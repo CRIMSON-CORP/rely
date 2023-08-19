@@ -153,7 +153,6 @@ addEventListener("DOMContentLoaded", followCursor);
 addEventListener("load", () => {
     pageloaded = true;
     splitText();
-    main();
 });
 
 function loader() {
