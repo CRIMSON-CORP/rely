@@ -190,6 +190,15 @@ addEventListener("DOMContentLoaded", followCursor);
 addEventListener("load", () => {
     pageloaded = true;
     splitText();
+
+    if (pageName !== "") {
+        gsap.to("#load-cover", {
+            y: "-100%",
+            pointerEvents: "none",
+            duration: 0,
+            onComplete: main,
+        });
+    }
 });
 
 function loader() {
@@ -267,7 +276,9 @@ function loader() {
         });
 }
 
-loader();
+if (pageName === "") {
+    loader();
+}
 
 function main() {
     window.scrollTo(0, 0);
