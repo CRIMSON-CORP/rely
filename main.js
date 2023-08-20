@@ -643,9 +643,8 @@ function main() {
     }
 
     function fancyButton() {
-        const fancyButtons = document.querySelectorAll(".fancy-button");
         const element = document.getElementById("follow-cursor");
-        const buttons = document.querySelectorAll("button, a.button");
+        const buttons = document.querySelectorAll("button, a.button, .fancy-button");
 
         buttons.forEach((button) => {
             button.onmouseenter = () => {
@@ -653,25 +652,6 @@ function main() {
             };
             button.onmouseleave = () => {
                 gsap.to(element, { scale: 0, opacity: 0 });
-            };
-        });
-
-        fancyButtons.forEach((button) => {
-            const mainText = button.querySelector(".text-main");
-            const underText = button.querySelector(".text-under");
-            const background = button.querySelector(".background");
-
-            button.onmouseenter = () => {
-                gsap.to(element, { scale: 1, opacity: 1 });
-                gsap.to(mainText, { y: "-100%", ease: "expo.out", duration: 1.1 });
-                gsap.to(underText, { y: "-100%", ease: "expo.out", duration: 1.1 });
-                gsap.to(background, { scaleY: 1, ease: "expo.out" });
-            };
-            button.onmouseleave = () => {
-                gsap.to(element, { scale: 0, opacity: 0 });
-                gsap.to(mainText, { y: "0%", ease: "expo.out", duration: 1.1 });
-                gsap.to(underText, { y: "0%", ease: "expo.out", duration: 1.1 });
-                gsap.to(background, { scaleY: 0, ease: "expo.out", duration: 1.1 });
             };
         });
     }

@@ -28,7 +28,27 @@
 
 @layer components {
     .fancy-button {
+        --ease: cubic-bezier(0.21, 0.67, 0.23, 1.02);
+        --duration: 1000ms;
         @apply p-1 sm:p-2 rounded-full flex items-center;
+    }
+
+    .fancy-button > .text > .text-main,
+    .fancy-button > .text > .text-under {
+        @apply translate-y-0 ease-[var(--ease)] duration-[var(--duration)];
+    }
+
+    .fancy-button:hover > .text > .text-main,
+    .fancy-button:hover > .text > .text-under {
+        @apply -translate-y-full ease-[var(--ease)] duration-[var(--duration)];
+    }
+
+    .fancy-button .background {
+        @apply ease-[var(--ease)] duration-[var(--duration)];
+    }
+
+    .fancy-button:hover .background {
+        @apply scale-y-100;
     }
 
     .fancy-button div.text {
