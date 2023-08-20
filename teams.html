@@ -191,7 +191,7 @@
                                     We are launching soon, Get early access when we launch
                                 </h3>
                                 <button
-                                    class="fancy-button relative overflow-hidden bg-primary-blue text-black"
+                                    class="fancy-button request-modal relative overflow-hidden bg-primary-blue text-black"
                                 >
                                     <div class="text block overflow-hidden h-6 text-white">
                                         <p class="text-main">Request early access</p>
@@ -328,6 +328,97 @@
                 inset: 0;
             "
         ></div>
+        <aside id="modal" class="fixed inset-0 w-screen h-screen grid place-items-center isolate">
+            <div class="background absolute inset-0 w-full h-full flex items-stretch">
+                <div class="cover-1 bg-secondary-yellow-6 grow"></div>
+                <div class="cover-2 bg-primary-blue grow"></div>
+            </div>
+
+            <div class="form-wrapper relative p-6 rounded-2xl bg-[#0A0A0A]">
+                <form action="" class="flex flex-col gap-4 max-w-[794px] mx-auto">
+                    <div class="flex items-center gap-4">
+                        <header class="text-neutral-light flex flex-col gap-1 grow">
+                            <h2 class="text-xl">Join our waitlist</h2>
+                            <p>
+                                We are super excited for you join on our quest for modern payments.
+                            </p>
+                        </header>
+                        <button type="button" class="close-modal-button">
+                            <img src="/close-modal-circle.svg" alt="close modal icon" />
+                        </button>
+                    </div>
+                    <div class="flex flex-col gap-4">
+                        <input
+                            type="text"
+                            name="full-name"
+                            placeholder="Full name"
+                            class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
+                        />
+                        <input
+                            type="text"
+                            name="email"
+                            placeholder="Email"
+                            class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
+                        />
+                        <input
+                            type="text"
+                            name="mobile-number"
+                            placeholder="Mobile number"
+                            class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
+                        />
+                    </div>
+                    <button
+                        type="submit"
+                        class="px-9 py-2.5 bg-white rounded-full self-end flex items-center gap-2"
+                    >
+                        <span class="text-[#12253E] text-sm">Send</span>
+                        <span>
+                            <svg
+                                width="17"
+                                height="16"
+                                viewBox="0 0 17 16"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M3.83301 8H13.1663"
+                                    stroke="#12253E"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                                <path
+                                    d="M8.5 3.33331L13.1667 7.99998L8.5 12.6666"
+                                    stroke="#12253E"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                            </svg>
+                        </span>
+                    </button>
+                </form>
+                <div
+                    id="form-submit-success-feedback"
+                    class="w-full overflow-hidden flex flex-col items-center text-center mx-auto text-neutral-light absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                >
+                    <img src="/form-submit-icon.svg" alt="submit success icon" class="mb-11" />
+                    <h3 class="text-[40px] leading-tight font-semibold mb-3.5">
+                        Thank You,
+                        <span class="font-bold" id="user-name-feedback">CHUCHO</span>
+                    </h3>
+                    <p class="text-xl mb-6">
+                        Your message and details are secured and well received
+                    </p>
+                    <button
+                        href="/"
+                        class="close-modal-button button bg-secondary-yellow-6 rounded-full px-8 py-3.5 text-primary-blue text-sm leading-tight"
+                    >
+                        Close
+                    </button>
+                </div>
+            </div>
+        </aside>
         <script src="/scroll-smoother.js"></script>
         <script type="module" src="/main.js"></script>
     </body>

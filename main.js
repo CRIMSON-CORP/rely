@@ -127,10 +127,32 @@ function positionElements() {
             { opacity: 0, y: "100%", ease: "power3.out", duration: 2 },
             "-=1.85"
         );
+        gsap.set("#modal", { opacity: 0, pointerEvents: "none" });
+        gsap.set("#modal .background .cover-1", { y: "-100%" });
+        gsap.set("#modal .background .cover-2", { y: "100%" });
+        gsap.set("#modal .form-wrapper", { opacity: 0, scale: 1.25 });
+        gsap.set("#form-submit-success-feedback", {
+            pointerEvents: "none",
+        });
+        gsap.set("#form-submit-success-feedback > *", {
+            y: 100,
+            opacity: 0,
+        });
     } else if (pageName === "teams") {
         gsap.set(".card-wrapper", { y: "150%" });
         gsap.set("#commet", { scaleY: 0, transformOrigin: "top" });
         gsap.set("#team-button", { y: "200%", opacity: 0 });
+        gsap.set("#modal", { opacity: 0, pointerEvents: "none" });
+        gsap.set("#modal .background .cover-1", { y: "-100%" });
+        gsap.set("#modal .background .cover-2", { y: "100%" });
+        gsap.set("#modal .form-wrapper", { opacity: 0, scale: 1.25 });
+        gsap.set("#form-submit-success-feedback", {
+            pointerEvents: "none",
+        });
+        gsap.set("#form-submit-success-feedback > *", {
+            y: 100,
+            opacity: 0,
+        });
     } else if (pageName === "contact") {
         gsap.set("#form-submit-success-feedback > *", {
             y: 100,
@@ -733,8 +755,8 @@ function main() {
         gsap.to("#commet", {
             scaleY: 1,
             ease: "expo.out",
-            duration: 3,
             delay: 3,
+            duration: 3,
             scrollTrigger: {
                 trigger: "#commet",
                 start: "top 75%",
@@ -822,6 +844,42 @@ function main() {
             );
     }
 
+    function modal() {
+        const modalButtons = document.querySelectorAll(".request-modal");
+        const closeModalButton = document.querySelectorAll(".close-modal-button");
+
+        const timeline = gsap.timeline({ paused: true });
+
+        timeline
+            .to("#modal", { opacity: 1, duration: 0.25 })
+            .to("#modal .cover-1", { y: 0, ease: "expo.out", duration: 1.5 }, "cover")
+            .to("#modal .cover-2", { y: 0, ease: "expo.out", duration: 1.5 }, "cover")
+            .to(
+                "#modal .form-wrapper",
+                { scale: 1, opacity: 1, duration: 1.5, ease: "expo.out" },
+                "-=1"
+            );
+
+        modalButtons.forEach((button) => {
+            button.onclick = () => {
+                gsap.set("#modal", { pointerEvents: "auto" });
+                if (gsap.getProperty("#modal form", "opacity") === 0) {
+                    gsap.set("#form-submit-success-feedback", { pointerEvents: "auto" });
+                }
+                timeline.play();
+            };
+        });
+
+        closeModalButton.forEach((button) => {
+            button.onclick = () => {
+                gsap.set("#modal", { pointerEvents: "none" });
+                gsap.set("#modal #form-submit-success-feedback", { pointerEvents: "none" });
+                timeline.timeScale(1.5);
+                timeline.reverse();
+            };
+        });
+    }
+
     function contactForm() {
         const form = document.querySelector("form");
 
@@ -833,6 +891,8 @@ function main() {
             document.getElementById("user-name-feedback").innerHTML = fullName;
 
             const timeline = gsap.timeline();
+
+            gsap.set("#form-submit-success-feedback", { pointerEvents: "auto" });
 
             timeline.to("form", { opacity: 0 }).to("#form-submit-success-feedback > *", {
                 y: 0,
@@ -859,9 +919,13 @@ function main() {
         testimonial();
         spotify();
         animatedCheckboxes();
+        modal();
+        contactForm();
+        waitlist();
     } else if (pageName === "teams") {
         teamHero();
         waitlist();
+        modal();
         teamMembers();
         teamText();
     } else if (pageName === "contact") {
