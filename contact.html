@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/rely.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Vitual and Pysical cards" />
+        <meta name="keywords" content="credit card payment" />
+        <title>Contact - Rely</title>
+    </head>
+    <body>
+        <header
+            class="fixed z-10 left-1/2 top-6 sm:top-12 -translate-x-1/2 px-5 w-full grid place-items-center"
+        >
+            <div
+                class="relative bg-[#0A0A0A] rounded-full flex items-center justify-between p-2 pl-6 border border-[#212121] w-full max-w-[342px]"
+            >
+                <a href="/" class="button"><img src="logo.svg" alt="rely logo" /></a>
+                <button
+                    id="menu-button"
+                    class="px-[18px] py-4 flex items-center text-white gap-2 bg-[#121212] rounded-full"
+                >
+                    <img src="/menu-icon.svg" alt="menu icon" />
+                    <span class="text-lg">Menu</span>
+                </button>
+                <nav id="menu-dropdown" data-nav-open="false" class="">
+                    <ul class="text-white flex flex-col gap-2 p-3">
+                        <li>
+                            <a
+                                href="/teams.html"
+                                class="button text-xl font-semibold p-2 rounded-xl hover:bg-white hover:text-black w-full block duration-300 ease-out"
+                                >Meet the team</a
+                            >
+                        </li>
+                        <li style="--delay: 125ms">
+                            <a
+                                href=""
+                                class="button text-xl font-semibold p-2 rounded-xl hover:bg-white hover:text-black w-full block duration-300 ease-out"
+                                >Contact us</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <div id="smooth-wrapper">
+            <div id="smooth-content">
+                <main class="flex flex-col overflow-x-hidden">
+                    <section
+                        id="hero"
+                        class="bg-[url('contact-header-background.png')] bg-center bg-cover"
+                    >
+                        <div class="container pt-56 pb-24">
+                            <header class="text-center text-neutral-light flex flex-col gap-3.5">
+                                <h1
+                                    class="split-word text-3xl md:text-[40px] font-semibold leading-tight"
+                                >
+                                    We would like to hear from you
+                                </h1>
+                                <p class="text-lg split-line">Contact Us</p>
+                            </header>
+                        </div>
+                    </section>
+                    <section id="contact">
+                        <div class="contact pt-10 pb-44">
+                            <div class="relative">
+                                <form
+                                    action=""
+                                    class="p-6 rounded-2xl bg-[#0A0A0A] flex flex-col gap-4 max-w-[794px] mx-auto"
+                                >
+                                    <header class="text-neutral-light flex flex-col gap-1">
+                                        <h2 class="text-xl">Get in Touch</h2>
+                                        <p>
+                                            We are on standby to attend to all your needs and
+                                            Inquires
+                                        </p>
+                                    </header>
+                                    <div class="flex flex-col gap-4">
+                                        <div class="flex items-center gap-4 flex-wrap">
+                                            <input
+                                                type="text"
+                                                name="full-name"
+                                                placeholder="Full name"
+                                                class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
+                                            />
+                                            <input
+                                                type="text"
+                                                name="email"
+                                                placeholder="Email"
+                                                class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
+                                            />
+                                            <input
+                                                type="text"
+                                                name="mobile-number"
+                                                placeholder="Mobile number"
+                                                class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
+                                            />
+                                        </div>
+                                        <textarea
+                                            placeholder="Enter your message"
+                                            name="message"
+                                            class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white h-28"
+                                            rows="10"
+                                        ></textarea>
+                                    </div>
+                                    <button
+                                        type="submit"
+                                        class="px-9 py-2.5 bg-white rounded-full self-end flex items-center gap-2"
+                                    >
+                                        <span class="text-[#12253E] text-sm">Send</span>
+                                        <span>
+                                            <svg
+                                                width="17"
+                                                height="16"
+                                                viewBox="0 0 17 16"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                            >
+                                                <path
+                                                    d="M3.83301 8H13.1663"
+                                                    stroke="#12253E"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                                <path
+                                                    d="M8.5 3.33331L13.1667 7.99998L8.5 12.6666"
+                                                    stroke="#12253E"
+                                                    stroke-width="2"
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                />
+                                            </svg>
+                                        </span>
+                                    </button>
+                                </form>
+                                <div
+                                    id="form-submit-success-feedback"
+                                    class="flex flex-col items-center text-center mx-auto text-neutral-light absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                                >
+                                    <img
+                                        src="/form-submit-icon.svg"
+                                        alt="submit success icon"
+                                        class="mb-11"
+                                    />
+                                    <h3 class="text-[40px] leading-tight font-semibold mb-3.5">
+                                        Thank You,
+                                        <span class="font-bold" id="user-name-feedback"
+                                            >CHUCHO</span
+                                        >
+                                    </h3>
+                                    <p class="text-xl mb-6">
+                                        Your message and details are secured and well received
+                                    </p>
+                                    <a
+                                        href="/"
+                                        class="button bg-secondary-yellow-6 rounded-full px-8 py-3.5 text-primary-blue text-sm leading-tight"
+                                    >
+                                        Return home
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="staggered-lines" class="pb-10 pt-2 bg-white">
+                        <div class="w-full h-5 mb-1 bg-black" data-speed="1" data-lag="0.1"></div>
+                        <div class="w-full h-4 mb-2 bg-black" data-speed="1" data-lag="0.2"></div>
+                        <div class="w-full h-3 mb-3 bg-black" data-speed="1" data-lag="0.3"></div>
+                        <div class="w-full h-2 mb-4 bg-black" data-speed="1" data-lag="0.4"></div>
+                        <div class="w-full h-1 mb-5 bg-black" data-speed="1" data-lag="0.5"></div>
+                    </section>
+                </main>
+                <footer class="bg-[#010B29] text-white">
+                    <div class="container">
+                        <div class="flex pt-20 sm:pt-24 pb-10 sm:pb-20">
+                            <div class="flex items-stretch flex-col grow gap-10 sm:gap-14">
+                                <div
+                                    class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-10"
+                                >
+                                    <img src="/logo-secondary.svg" alt="logo secodary" />
+                                    <div class="grid gap-3 text-base sm:text-xl">
+                                        <a href="tel:+234(0)7063563095"
+                                            >Support Line: +234(0)7063563095</a
+                                        >
+                                        <a href="mailto:hello@inforely@gmail.com"
+                                            >Email: hello@inforely@gmail.com</a
+                                        >
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-2.5 justify-center">
+                                    <a href="/" class="p-2"
+                                        ><img src="/facebook.svg" alt="facebook icon"
+                                    /></a>
+                                    <a href="/" class="p-2"
+                                        ><img src="/twitter.svg" alt="twitter icon"
+                                    /></a>
+                                    <a href="/" class="p-2"
+                                        ><img src="/instagram.svg" alt="instagram icon"
+                                    /></a>
+                                    <a href="/" class="p-2"
+                                        ><img src="/whatsapp.svg" alt="whatsapp icon"
+                                    /></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="flex flex-col sm:flex-row gap-6 items-center justify-between pt-3.5 pb-20 border-t border-t-neutral-light"
+                        >
+                            <p class="text-base sm:text-xl text-center sm:text-left">
+                                &copy; 2022 RelyCard. All rights reserved.
+                            </p>
+                            <button
+                                class="text-base sm:text-xl flex items-center gap-11"
+                                id="back-to-top"
+                            >
+                                <span>Back To Top</span>
+                                <div class="bg-[#0043FF] w-[72px] h-12 grid place-items-center">
+                                    <img src="/back-to-top-arrow.svg" alt="back to top arrow" />
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <aside
+            id="loader"
+            class="grid place-items-center fixed z-20 bg-black inset-0 w-screen h-screen overflow-hidden"
+        >
+            <div id="cover" class="absolute inset-0 bg-white mix-blend-difference"></div>
+            <svg
+                width="264"
+                height="106"
+                viewBox="0 0 264 106"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+            >
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.175293 0.896729H53.4853C65.7957 0.896729 75.7716 10.8764 75.7716 23.1831C75.7716 35.4934 65.792 45.4731 53.4853 45.4731H0.175293V0.896729Z"
+                    fill="white"
+                />
+                <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M0.175217 101.973H75.5877L28.8569 66.6709L0.175217 46.385V101.973Z"
+                    fill="white"
+                />
+                <path
+                    d="M87.6988 75.5242V52.2494C88.0394 36.3544 101.21 26.3633 109.271 26.3633C113.017 26.3633 115.629 28.4069 115.629 32.8348V33.289C115.629 34.6514 114.947 38.171 110.974 39.5334C102.118 42.7124 101.323 49.411 101.323 58.6074C101.323 60.3104 101.55 64.5113 101.55 75.5242C101.55 79.9521 98.0305 82.2228 94.5109 82.2228C90.9913 82.2228 87.6988 80.0657 87.6988 75.5242ZM116.916 53.8389C116.916 36.695 131.108 23.8655 147.458 23.8655C150.523 23.8655 153.248 24.2061 156.313 25.1144C164.488 27.4986 170.165 32.6077 173.684 38.2845C177.204 43.9613 178.226 49.411 178.226 53.0442C178.226 54.1795 178.226 57.5856 176.296 59.5157C175.387 60.5375 174.366 61.1052 173.23 61.1052C172.662 61.1052 172.095 60.9917 171.414 60.7646C167.667 59.6292 163.807 59.0616 159.833 59.0616C156.654 59.0616 153.361 59.4022 150.296 60.1969C149.728 60.3104 149.161 60.424 148.593 60.424C146.095 60.424 143.597 58.1533 143.143 56.2232C143.03 55.2013 142.916 54.5201 142.916 54.066C142.916 52.0223 143.711 48.9569 147.798 48.1621C151.772 47.4809 155.746 47.0268 159.719 47.0268C160.628 47.0268 161.65 47.1403 162.671 47.1403C159.946 40.7823 153.816 37.6033 147.571 37.6033C141.327 37.6033 135.536 40.6688 132.471 46.6862C131.222 49.0704 130.654 51.4547 130.654 53.7254C130.654 54.7472 130.427 58.3803 133.606 62.8082C136.672 67.3497 141.781 70.188 147.571 70.188C150.296 70.188 152.907 69.5068 155.405 68.2579C156.427 67.6903 157.562 67.4632 158.584 67.4632C161.763 67.4632 164.488 69.961 165.056 72.1182C165.396 73.14 165.623 73.9347 165.623 74.6159C165.623 76.0919 165.396 78.5897 161.763 80.4063C157.108 82.677 152.453 83.6988 147.571 83.6988C131.676 83.6988 116.916 71.4369 116.916 53.8389ZM185.047 9.78708C185.047 5.13212 188.566 2.86141 192.086 2.86141C195.606 2.86141 199.012 5.13212 199.012 9.78708V75.2972C199.012 79.8386 195.606 82.2228 192.086 82.2228C188.566 82.2228 185.047 79.8386 185.047 75.2972V9.78708ZM208.109 56.9044V32.4942C208.109 27.9528 211.628 25.5685 215.148 25.5685C218.667 25.5685 222.074 27.8393 222.074 32.4942V56.9044C222.074 65.7602 228.659 70.0745 235.471 70.0745C242.283 70.0745 249.095 65.5331 249.095 56.9044V32.4942C249.095 27.9528 252.615 25.5685 256.134 25.5685C259.654 25.5685 263.06 27.8393 263.06 32.4942V74.2753C263.06 89.1485 251.933 105.043 232.405 105.043C227.523 105.043 222.187 104.135 216.283 101.864C212.309 100.389 211.855 97.6637 211.855 95.7336C211.855 94.5982 212.082 92.3275 214.467 90.0568C215.602 88.9214 216.964 88.3538 218.667 88.3538C219.689 88.3538 220.825 88.5808 221.846 89.1485C225.139 90.8515 228.318 91.5328 231.383 91.5328C238.763 91.5328 244.554 87.2184 247.278 81.8822C243.645 83.2446 239.899 83.9259 236.152 83.9259C221.619 83.9259 208.109 74.0483 208.109 56.9044Z"
+                    fill="white"
+                />
+            </svg>
+        </aside>
+        <span
+            id="follow-cursor"
+            class="z-40 w-28 h-28 rounded-full bg-white absolute hidden md:inline pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference scale-0 opacity-0"
+        ></span>
+        <div
+            id="load-cover"
+            style="
+                position: fixed;
+                z-index: 9999;
+                background-color: black;
+                width: 100vw;
+                height: 100vh;
+                inset: 0;
+            "
+        ></div>
+        <script src="/scroll-smoother.js"></script>
+        <script type="module" src="/main.js"></script>
+    </body>
+</html>

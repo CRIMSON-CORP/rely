@@ -131,6 +131,11 @@ function positionElements() {
         gsap.set(".card-wrapper", { y: "150%" });
         gsap.set("#commet", { scaleY: 0, transformOrigin: "top" });
         gsap.set("#team-button", { y: "200%", opacity: 0 });
+    } else if (pageName === "contact") {
+        gsap.set("#form-submit-success-feedback > *", {
+            y: 100,
+            opacity: 0,
+        });
     }
 }
 
@@ -793,6 +798,52 @@ function main() {
         });
     }
 
+    function contactHero() {
+        let timeline = gsap.timeline({ delay: 1 });
+        timeline
+            .to("#hero h1 .word", {
+                y: 0,
+                opacity: 1,
+                stagger: { each: 0.05, from: "start" },
+                ease: "power3.out",
+                duration: 0.8,
+            })
+            .to(
+                "#hero p .line",
+                {
+                    opacity: 1,
+                    scale: 1,
+                    y: 0,
+                    ease: "power3.out",
+                    duration: 1,
+                    stagger: { each: 0.1, from: "start" },
+                },
+                "-=0.5"
+            );
+    }
+
+    function contactForm() {
+        const form = document.querySelector("form");
+
+        form.onsubmit = (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            const fullName = formData.get("full-name").split(" ")[0];
+
+            document.getElementById("user-name-feedback").innerHTML = fullName;
+
+            const timeline = gsap.timeline();
+
+            timeline.to("form", { opacity: 0 }).to("#form-submit-success-feedback > *", {
+                y: 0,
+                opacity: 1,
+                duration: 2,
+                ease: "power4",
+                stagger: 0.125,
+            });
+        };
+    }
+
     headerAnimation();
     headerDropDown();
     fancyButton();
@@ -813,5 +864,8 @@ function main() {
         waitlist();
         teamMembers();
         teamText();
+    } else if (pageName === "contact") {
+        contactHero();
+        contactForm();
     }
 }
