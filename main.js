@@ -163,85 +163,84 @@ addEventListener("DOMContentLoaded", followCursor);
 addEventListener("load", () => {
     pageloaded = true;
     splitText();
-    main();
 });
 
-// function loader() {
-//     const loader = document.getElementById("loader");
-//     const svg = loader.querySelector("svg");
-//     const cover = loader.querySelector("#cover");
+function loader() {
+    const loader = document.getElementById("loader");
+    const svg = loader.querySelector("svg");
+    const cover = loader.querySelector("#cover");
 
-//     const topR = svg.children[0];
-//     const bottomR = svg.children[1];
-//     const text = svg.children[2];
+    const topR = svg.children[0];
+    const bottomR = svg.children[1];
+    const text = svg.children[2];
 
-//     gsap.set(topR, { rotate: 45, opacity: 0 });
-//     gsap.set(bottomR, { rotate: 45, opacity: 0 });
-//     gsap.set(text, { x: "-100%", opacity: 0 });
-//     gsap.set(cover, { scaleX: 0, transformOrigin: "right" });
+    gsap.set(topR, { rotate: 45, opacity: 0 });
+    gsap.set(bottomR, { rotate: 45, opacity: 0 });
+    gsap.set(text, { x: "-100%", opacity: 0 });
+    gsap.set(cover, { scaleX: 0, transformOrigin: "right" });
 
-//     const logoTimeline = gsap.timeline();
-//     const coverTimeline = gsap.timeline({
-//         repeat: -1,
-//         yoyo: false,
-//         repeatDelay: 0.75,
-//         delay: 3,
-//         defaults: {
-//             delay: 0.75,
-//             duration: 0.75,
-//             ease: "sine.out",
-//         },
-//     });
+    const logoTimeline = gsap.timeline();
+    const coverTimeline = gsap.timeline({
+        repeat: -1,
+        yoyo: false,
+        repeatDelay: 0.75,
+        delay: 3,
+        defaults: {
+            delay: 0.75,
+            duration: 0.75,
+            ease: "sine.out",
+        },
+    });
 
-//     logoTimeline
-//         .to("#load-cover", { opacity: 0, pointerEvents: "none", duration: 0 })
-//         .to(topR, { rotate: 0, opacity: 1, delay: 1 })
-//         .to(bottomR, { rotate: 0, opacity: 1 })
-//         .to(text, {
-//             x: 0,
-//             opacity: 1,
-//             ease: "expo.out",
-//             duration: 1.5,
-//         });
+    logoTimeline
+        .to("#load-cover", { opacity: 0, pointerEvents: "none", duration: 0 })
+        .to(topR, { rotate: 0, opacity: 1, delay: 1 })
+        .to(bottomR, { rotate: 0, opacity: 1 })
+        .to(text, {
+            x: 0,
+            opacity: 1,
+            ease: "expo.out",
+            duration: 1.5,
+        });
 
-//     coverTimeline
-//         .to(cover, { scaleX: 1, delay: 0 })
-//         .to(cover, {
-//             scaleX: 0,
-//             delay: 0,
-//             transformOrigin: "left",
-//             onComplete() {
-//                 if (pageloaded) {
-//                     coverTimeline.kill();
-//                     gsap.to(loader, {
-//                         y: "-100%",
-//                         onComplete: main,
-//                         duration: 1.25,
-//                         ease: "expo.in",
-//                     });
-//                 }
-//             },
-//         })
-//         .to(cover, { scaleX: 1, delay: 1, delay: 0.75 })
-//         .to(cover, {
-//             scaleX: 0,
-//             delay: 0,
-//             transformOrigin: "right",
-//             onComplete() {
-//                 if (pageloaded) {
-//                     coverTimeline.kill();
-//                     gsap.to(loader, {
-//                         y: "-100%",
-//                         onComplete: main,
-//                         duration: 1.25,
-//                         ease: "expo.in",
-//                     });
-//                 }
-//             },
-//         });
-// }
+    coverTimeline
+        .to(cover, { scaleX: 1, delay: 0 })
+        .to(cover, {
+            scaleX: 0,
+            delay: 0,
+            transformOrigin: "left",
+            onComplete() {
+                if (pageloaded) {
+                    coverTimeline.kill();
+                    gsap.to(loader, {
+                        y: "-100%",
+                        onComplete: main,
+                        duration: 1.25,
+                        ease: "expo.in",
+                    });
+                }
+            },
+        })
+        .to(cover, { scaleX: 1, delay: 1, delay: 0.75 })
+        .to(cover, {
+            scaleX: 0,
+            delay: 0,
+            transformOrigin: "right",
+            onComplete() {
+                if (pageloaded) {
+                    coverTimeline.kill();
+                    gsap.to(loader, {
+                        y: "-100%",
+                        onComplete: main,
+                        duration: 1.25,
+                        ease: "expo.in",
+                    });
+                }
+            },
+        });
+}
 
-// loader();
+loader();
 
 function main() {
     window.scrollTo(0, 0);
@@ -730,6 +729,7 @@ function main() {
             scaleY: 1,
             ease: "expo.out",
             duration: 3,
+            delay: 3,
             scrollTrigger: {
                 trigger: "#commet",
                 start: "top 75%",
