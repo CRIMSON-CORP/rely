@@ -127,6 +127,10 @@ function positionElements() {
             { opacity: 0, y: "100%", ease: "power3.out", duration: 2 },
             "-=1.85"
         );
+    } else if (pageName === "teams") {
+        gsap.set(".card-wrapper", { y: "150%" });
+        gsap.set("#commet", { scaleY: 0, transformOrigin: "top" });
+        gsap.set("#team-button", { y: "200%", opacity: 0 });
     }
 }
 
@@ -159,89 +163,98 @@ addEventListener("DOMContentLoaded", followCursor);
 addEventListener("load", () => {
     pageloaded = true;
     splitText();
+    main();
 });
 
-function loader() {
-    const loader = document.getElementById("loader");
-    const svg = loader.querySelector("svg");
-    const cover = loader.querySelector("#cover");
+// function loader() {
+//     const loader = document.getElementById("loader");
+//     const svg = loader.querySelector("svg");
+//     const cover = loader.querySelector("#cover");
 
-    const topR = svg.children[0];
-    const bottomR = svg.children[1];
-    const text = svg.children[2];
+//     const topR = svg.children[0];
+//     const bottomR = svg.children[1];
+//     const text = svg.children[2];
 
-    gsap.set(topR, { rotate: 45, opacity: 0 });
-    gsap.set(bottomR, { rotate: 45, opacity: 0 });
-    gsap.set(text, { x: "-100%", opacity: 0 });
-    gsap.set(cover, { scaleX: 0, transformOrigin: "right" });
+//     gsap.set(topR, { rotate: 45, opacity: 0 });
+//     gsap.set(bottomR, { rotate: 45, opacity: 0 });
+//     gsap.set(text, { x: "-100%", opacity: 0 });
+//     gsap.set(cover, { scaleX: 0, transformOrigin: "right" });
 
-    const logoTimeline = gsap.timeline();
-    const coverTimeline = gsap.timeline({
-        repeat: -1,
-        yoyo: false,
-        repeatDelay: 0.75,
-        delay: 3,
-        defaults: {
-            delay: 0.75,
-            duration: 0.75,
-            ease: "sine.out",
-        },
-    });
+//     const logoTimeline = gsap.timeline();
+//     const coverTimeline = gsap.timeline({
+//         repeat: -1,
+//         yoyo: false,
+//         repeatDelay: 0.75,
+//         delay: 3,
+//         defaults: {
+//             delay: 0.75,
+//             duration: 0.75,
+//             ease: "sine.out",
+//         },
+//     });
 
-    logoTimeline
-        .to("#load-cover", { opacity: 0, pointerEvents: "none", duration: 0 })
-        .to(topR, { rotate: 0, opacity: 1, delay: 1 })
-        .to(bottomR, { rotate: 0, opacity: 1 })
-        .to(text, {
-            x: 0,
-            opacity: 1,
-            ease: "expo.out",
-            duration: 1.5,
-        });
+//     logoTimeline
+//         .to("#load-cover", { opacity: 0, pointerEvents: "none", duration: 0 })
+//         .to(topR, { rotate: 0, opacity: 1, delay: 1 })
+//         .to(bottomR, { rotate: 0, opacity: 1 })
+//         .to(text, {
+//             x: 0,
+//             opacity: 1,
+//             ease: "expo.out",
+//             duration: 1.5,
+//         });
 
-    coverTimeline
-        .to(cover, { scaleX: 1, delay: 0 })
-        .to(cover, {
-            scaleX: 0,
-            delay: 0,
-            transformOrigin: "left",
-            onComplete() {
-                if (pageloaded) {
-                    coverTimeline.kill();
-                    gsap.to(loader, {
-                        y: "-100%",
-                        onComplete: main,
-                        duration: 1.25,
-                        ease: "expo.in",
-                    });
-                }
-            },
-        })
-        .to(cover, { scaleX: 1, delay: 1, delay: 0.75 })
-        .to(cover, {
-            scaleX: 0,
-            delay: 0,
-            transformOrigin: "right",
-            onComplete() {
-                if (pageloaded) {
-                    coverTimeline.kill();
-                    gsap.to(loader, {
-                        y: "-100%",
-                        onComplete: main,
-                        duration: 1.25,
-                        ease: "expo.in",
-                    });
-                }
-            },
-        });
-}
+//     coverTimeline
+//         .to(cover, { scaleX: 1, delay: 0 })
+//         .to(cover, {
+//             scaleX: 0,
+//             delay: 0,
+//             transformOrigin: "left",
+//             onComplete() {
+//                 if (pageloaded) {
+//                     coverTimeline.kill();
+//                     gsap.to(loader, {
+//                         y: "-100%",
+//                         onComplete: main,
+//                         duration: 1.25,
+//                         ease: "expo.in",
+//                     });
+//                 }
+//             },
+//         })
+//         .to(cover, { scaleX: 1, delay: 1, delay: 0.75 })
+//         .to(cover, {
+//             scaleX: 0,
+//             delay: 0,
+//             transformOrigin: "right",
+//             onComplete() {
+//                 if (pageloaded) {
+//                     coverTimeline.kill();
+//                     gsap.to(loader, {
+//                         y: "-100%",
+//                         onComplete: main,
+//                         duration: 1.25,
+//                         ease: "expo.in",
+//                     });
+//                 }
+//             },
+//         });
+// }
 
-loader();
+// loader();
 
 function main() {
     window.scrollTo(0, 0);
     function headerAnimation() {
-        gsap.to("header>div", { y: 0, opacity: 1, ease: "expo.out", duration: 2 });
+        gsap.to("header>div", {
+            y: 0,
+            opacity: 1,
+            ease: "expo.out",
+            duration: 2,
+            onComplete() {
+                gsap.set("nav#menu-dropdown", { transitionDuration: "500ms" });
+            },
+        });
     }
 
     function heroAnimation() {
@@ -690,6 +703,116 @@ function main() {
         });
     }
 
+    function teamHero() {
+        const timeline = gsap.timeline();
+
+        timeline
+            .to("#hero-image-wrapper", {
+                clipPath: "polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%)",
+                duration: 1.5,
+                ease: "expo.out",
+                delay: 0.5,
+            })
+            .to(
+                "#hero-image-wrapper",
+                {
+                    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+                    duration: 1.5,
+                    ease: "expo.out",
+                    borderRadius: 23,
+                },
+                "-=0.75"
+            )
+            .to(".card-wrapper", { y: 0, ease: "expo.out", duration: 2 }, "-=1.5")
+            .to(
+                ".card-wrapper .card",
+                {
+                    rotateY: 360,
+                    ease: "power0",
+                    duration: 5,
+                    repeat: -1,
+                },
+                "-=2"
+            )
+            .to(
+                "#hero h1 .word",
+                {
+                    y: 0,
+                    opacity: 1,
+                    stagger: { each: 0.05, from: "start" },
+                    ease: "power3.out",
+                    duration: 0.8,
+                },
+                "-=4"
+            );
+
+        gsap.to("#commet", {
+            scaleY: 1,
+            ease: "expo.out",
+            duration: 3,
+            scrollTrigger: {
+                trigger: "#commet",
+                start: "top 75%",
+            },
+        });
+
+        gsap.to("#team-button", {
+            y: 0,
+            opacity: 1,
+            duration: 1.5,
+            scrollTrigger: {
+                trigger: "#team-button",
+                start: "top 75%",
+            },
+        });
+    }
+
+    function teamMembers() {
+        document.querySelectorAll("#team-members article").forEach((article) => {
+            const timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: article,
+                    start: "top center",
+                },
+            });
+
+            timeline
+                .from(article, {
+                    opacity: 0,
+                    y: 50,
+                    transformOrigin: "bottom",
+                    duration: 1.5,
+                    ease: "power2",
+                })
+                .from(
+                    article.querySelector("div"),
+                    {
+                        opacity: 0,
+                        scale: 0.75,
+                        ease: "back.out(2)",
+                        duration: 1,
+                    },
+                    "-=1"
+                );
+        });
+    }
+
+    function teamText() {
+        document.querySelectorAll("#team-text h2 .line").forEach((line) => {
+            gsap.set(line, { y: 0, opacity: 1, scale: 1 });
+
+            gsap.to(line, {
+                color: "#D0D5DD",
+                scrollTrigger: {
+                    trigger: line,
+                    start: "top center",
+                    end: "bottom center",
+                    scrub: true,
+                },
+            });
+        });
+    }
+
     headerAnimation();
     headerDropDown();
     fancyButton();
@@ -706,6 +829,9 @@ function main() {
         spotify();
         animatedCheckboxes();
     } else if (pageName === "teams") {
+        teamHero();
         waitlist();
+        teamMembers();
+        teamText();
     }
 }

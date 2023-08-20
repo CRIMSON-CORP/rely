@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    content: ["index.html"],
+    content: ["*.html"],
     theme: {
         extend: {
             colors: {
@@ -14,6 +14,9 @@ export default {
                 secondary: {
                     "yellow-1": "#FCF2D3",
                     "yellow-6": "#F0BD23",
+                },
+                gray: {
+                    9: "#344054",
                 },
             },
             container: {

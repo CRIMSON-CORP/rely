@@ -41,7 +41,7 @@
 }
 
 #menu-dropdown {
-    @apply w-full absolute top-full mt-2 left-0 border border-[#212121] bg-[#0A0A0A] rounded-2xl opacity-0 scale-75 -translate-y-5 overflow-hidden transition-all duration-500 ease-in delay-100;
+    @apply w-full absolute top-full mt-2 left-0 border border-[#212121] bg-[#0A0A0A] rounded-2xl opacity-0 scale-75 -translate-y-5 overflow-hidden transition-all duration-0 ease-in delay-100;
 }
 
 #menu-dropdown li {
@@ -55,5 +55,27 @@
 
     #menu-dropdown.open li {
         @apply !opacity-100 !translate-y-0 !delay-[calc(var(--delay,0ms)_+_350ms)];
+    }
+}
+
+@layer custom {
+    .card-wrapper {
+        perspective: 500px;
+    }
+
+    .card-wrapper .card {
+        transform-style: preserve-3d;
+    }
+
+    .card-wrapper .card img {
+        backface-visibility: hidden;
+    }
+
+    .card-wrapper .card img:nth-child(2) {
+        transform: rotateY(180deg) rotateZ(240deg);
+    }
+
+    #hero-image-wrapper {
+        clip-path: polygon(10% 10%, 10% 10%, 10% 90%, 10% 90%);
     }
 }

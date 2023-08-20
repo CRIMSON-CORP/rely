@@ -46,6 +46,130 @@
         <div id="smooth-wrapper">
             <div id="smooth-content">
                 <main class="flex flex-col overflow-x-hidden">
+                    <section id="hero">
+                        <div
+                            class="container relative flex items-center justify-center pt-52 pb-20 flex-col gap-8"
+                        >
+                            <div class="relative w-full flex justify-center">
+                                <div
+                                    id="hero-image-wrapper"
+                                    class="relative bg-[url('/teams-hero.png')] w-full max-w-2xl aspect-[1.425] overflow-hidden bg-cover bg-center bg-no-repeat"
+                                >
+                                    <div class="card-wrapper flex justify-center">
+                                        <div class="card relative w-[46%] aspect-[0.643] top-4">
+                                            <img
+                                                src="/teams-credit-card.png"
+                                                alt="credit card"
+                                                class="absolute front inset-0"
+                                            />
+                                            <img
+                                                src="/teams-credit-card.png"
+                                                alt="credit card"
+                                                class="absolute back inset-0"
+                                            />
+                                        </div>
+                                    </div>
+                                    <div
+                                        class="absolute inset-0 bg-[url('/teams-hero-overlay.png')] h-full w-full"
+                                    ></div>
+                                </div>
+                                <h1
+                                    class="split-word absolute text-neutral-light font-bold text-4xl sm:text-5xl md:text-6xl lg:text-[80px] leading-tight text-center left-1/2 -translate-x-1/2 sm:-translate-y-1/2 bottom-0 w-full max-w-[964px]"
+                                >
+                                    Meet the amazing team behind Rely.
+                                </h1>
+                            </div>
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="2"
+                                height="160"
+                                viewBox="0 0 2 160"
+                                fill="none"
+                                id="commet"
+                            >
+                                <path
+                                    d="M1 0L1.00001 160"
+                                    stroke="url(#paint0_linear_604_427)"
+                                    stroke-width="1.5"
+                                />
+                                <defs>
+                                    <linearGradient
+                                        id="paint0_linear_604_427"
+                                        x1="1.5"
+                                        y1="-2.18557e-08"
+                                        x2="1.50001"
+                                        y2="160"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop stop-color="#D0D5DD" stop-opacity="0" />
+                                        <stop offset="0.583337" stop-color="#D0D5DD" />
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div
+                                id="team-button"
+                                class="px-5 py-2 bg-[linear-gradient(315deg,#001E78_32.87%,#453099_74.21%,#6F56D7_100%)] rounded-full text-white text-sm"
+                            >
+                                the team
+                            </div>
+                        </div>
+                    </section>
+                    <section
+                        id="team-members"
+                        class="grid grid-cols-[repeat(auto-fit,minmax(320px,1fr))] gap-5"
+                    >
+                        <article class="relative w-full aspect-[1.26]">
+                            <img
+                                src="/team-image.png"
+                                alt="Oguntade Ayodeji Ifeoluwa"
+                                class="absolute w-full h-full inset-0 object-cover object-center"
+                            />
+                            <div
+                                class="absolute bg-white py-2 5 px-3 text-sm font-semibold bottom-5 left-1/4 sm:left-1/2"
+                            >
+                                <h2>Oguntade Ayodeji Ifeoluwa</h2>
+                                <p class="text-primary-blue">Co-founder</p>
+                            </div>
+                        </article>
+                        <article class="relative w-full aspect-[1.26]">
+                            <img
+                                src="/team-image.png"
+                                alt="Junko Guiass Nicolas"
+                                class="absolute w-full h-full inset-0 object-cover object-center"
+                            />
+                            <div
+                                class="absolute bg-white py-2 5 px-3 text-sm font-semibold bottom-5 left-1/4 sm:left-1/2"
+                            >
+                                <h2>Junko Guiass Nicolas</h2>
+                                <p class="text-primary-blue">Co-founder</p>
+                            </div>
+                        </article>
+                        <article class="relative w-full aspect-[1.26]">
+                            <img
+                                src="/team-image.png"
+                                alt="Uyime Joseph Jackson"
+                                class="absolute w-full h-full inset-0 object-cover object-center"
+                            />
+                            <div
+                                class="absolute bg-white py-2 5 px-3 text-sm font-semibold bottom-5 left-1/4 sm:left-1/2"
+                            >
+                                <h2>Uyime Joseph Jackson</h2>
+                                <p class="text-primary-blue">Co-founder</p>
+                            </div>
+                        </article>
+                    </section>
+                    <section id="team-text">
+                        <div class="container h-screen flex justify-center items-center">
+                            <h2
+                                class="split-line font-bold text-[40px] leading-tight max-w-[791px] text-gray-9"
+                            >
+                                We want to create a new intelligent solution to give full control to
+                                the users to better manage their payment cards and gain insights
+                                into their transactions spend in other for them to make informed
+                                financial decisions.
+                            </h2>
+                        </div>
+                    </section>
                     <section id="staggered-lines" class="pb-10 pt-2 bg-white">
                         <div class="w-full h-5 mb-1 bg-black" data-speed="1" data-lag="0.1"></div>
                         <div class="w-full h-4 mb-2 bg-black" data-speed="1" data-lag="0.2"></div>
@@ -159,7 +283,7 @@
                 </footer>
             </div>
         </div>
-        <aside
+        <!-- <aside
             id="loader"
             class="grid place-items-center fixed z-20 bg-black inset-0 w-screen h-screen overflow-hidden"
         >
@@ -188,12 +312,12 @@
                     fill="white"
                 />
             </svg>
-        </aside>
+        </aside> -->
         <span
             id="follow-cursor"
             class="z-40 w-28 h-28 rounded-full bg-white absolute hidden md:inline pointer-events-none -translate-x-1/2 -translate-y-1/2 mix-blend-difference scale-0 opacity-0"
         ></span>
-        <div
+        <!-- <div
             id="load-cover"
             style="
                 position: fixed;
@@ -203,7 +327,7 @@
                 height: 100vh;
                 inset: 0;
             "
-        ></div>
+        ></div> -->
         <script src="/scroll-smoother.js"></script>
         <script type="module" src="/main.js"></script>
     </body>
