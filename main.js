@@ -1,5 +1,4 @@
 import "./style.css";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Linear, gsap } from "gsap";
 
 import Swiper from "swiper";
@@ -31,7 +30,6 @@ window.addEventListener("DOMContentLoaded", (event) => {
 // All images and assets loaded
 document.addEventListener("load", function () {
     ScrollTrigger.refresh();
-    window.scrollTo(0, 0);
 });
 
 function marquee() {
@@ -111,8 +109,6 @@ function splitText() {
 }
 
 function positionElements() {
-    window.scrollTo(0, 0);
-
     gsap.set("header>div", { y: "-200%", opacity: 0 });
     if (pageName === "") {
         gsap.set("#alert > .container > div > div > img:nth-child(1)", {
@@ -281,7 +277,6 @@ if (pageName === "") {
 }
 
 function main() {
-    window.scrollTo(0, 0);
     function headerAnimation() {
         gsap.to("header>div", {
             y: 0,
