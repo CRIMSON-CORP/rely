@@ -14,10 +14,10 @@ let pageloaded = false;
 const pageName = location.pathname.replace("/", "").replace(".html", "");
 
 let smoother = ScrollSmoother.create({
-    smooth: 1.5,
-    effects: true,
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
+    smooth: 1,
+    effects: true,
 });
 
 ScrollTrigger.normalizeScroll(true);
@@ -28,7 +28,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // All images and assets loaded
-document.addEventListener("load", function () {
+window.addEventListener("load", function () {
     ScrollTrigger.refresh();
 });
 
