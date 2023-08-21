@@ -13,10 +13,12 @@ let pageloaded = false;
 
 const pageName = location.pathname.replace("/", "").replace(".html", "");
 
+ScrollTrigger.normalizeScroll();
+
 let smoother = ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
-    smooth: 1,
+    smooth: 1.5,
     effects: true,
 });
 
