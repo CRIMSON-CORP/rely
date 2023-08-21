@@ -14,12 +14,7 @@ let pageloaded = false;
 
 const pageName = location.pathname.replace("/", "").replace(".html", "");
 
-let smoother = ScrollSmoother.create({
-    smooth: 1.5,
-    effects: true,
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-});
+let smoother = null;
 
 ScrollTrigger.normalizeScroll(true);
 
@@ -29,9 +24,21 @@ window.addEventListener("DOMContentLoaded", (event) => {
 });
 
 // All images and assets loaded
-document.addEventListener("load", function () {
+window.addEventListener("load", function () {
     ScrollTrigger.refresh();
-    window.scrollTo(0, 0);
+
+    setTimeout(() => {
+        window.scrollTo(0, 0);
+    }, 100);
+
+    setTimeout(() => {
+        smoother = ScrollSmoother.create({
+            smooth: 1.5,
+            effects: true,
+            wrapper: "#smooth-wrapper",
+            content: "#smooth-content",
+        });
+    }, 500);
 });
 
 function marquee() {
@@ -111,8 +118,6 @@ function splitText() {
 }
 
 function positionElements() {
-    window.scrollTo(0, 0);
-
     gsap.set("header>div", { y: "-200%", opacity: 0 });
     if (pageName === "") {
         gsap.set("#alert > .container > div > div > img:nth-child(1)", {
@@ -281,7 +286,6 @@ if (pageName === "") {
 }
 
 function main() {
-    window.scrollTo(0, 0);
     function headerAnimation() {
         gsap.to("header>div", {
             y: 0,
