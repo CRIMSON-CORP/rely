@@ -947,7 +947,7 @@
             </div>
 
             <div class="form-wrapper relative p-6 rounded-2xl bg-[#0A0A0A]">
-                <form action="" class="flex flex-col gap-4 max-w-[794px] mx-auto">
+                <form class="flex flex-col gap-4 max-w-[794px] mx-auto">
                     <div class="flex items-center gap-4">
                         <header class="text-neutral-light flex flex-col gap-1 grow">
                             <h2 class="text-xl">Join our waitlist</h2>
@@ -979,34 +979,54 @@
                             class="bg-[#121212] border border-[#212121] rounded-2xl px-3 py-3.5 text-white grow placeholder:text-white"
                         />
                     </div>
-                    <button
-                        type="submit"
-                        class="px-9 py-2.5 bg-white rounded-full self-end flex items-center gap-2"
-                    >
-                        <span class="text-[#12253E] text-sm">Send</span>
-                        <span>
+                    <button type="submit">
+                        <div class="success indicator">
                             <svg
-                                width="17"
-                                height="16"
-                                viewBox="0 0 17 16"
-                                fill="none"
                                 xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="2.5"
+                                stroke="white"
+                                class="w-5 h-5"
                             >
                                 <path
-                                    d="M3.83301 8H13.1663"
-                                    stroke="#12253E"
-                                    stroke-width="2"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
-                                />
-                                <path
-                                    d="M8.5 3.33331L13.1667 7.99998L8.5 12.6666"
-                                    stroke="#12253E"
-                                    stroke-width="2"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    d="M4.5 12.75l6 6 9-13.5"
                                 />
                             </svg>
+                        </div>
+                        <div class="loader indicator">
+                            <span
+                                class="w-5 h-5 border-4 border-white/50 border-t-white rounded-full animate-spin"
+                            ></span>
+                        </div>
+                        <span class="default flex items-center gap-2">
+                            <span class="text-[#12253E] text-sm">Send</span>
+                            <span>
+                                <svg
+                                    width="17"
+                                    height="16"
+                                    viewBox="0 0 17 16"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M3.83301 8H13.1663"
+                                        stroke="#12253E"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                    <path
+                                        d="M8.5 3.33331L13.1667 7.99998L8.5 12.6666"
+                                        stroke="#12253E"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </span>
                         </span>
                     </button>
                 </form>
@@ -1034,5 +1054,6 @@
         <script src="/scroll-trigger.js"></script>
         <script src="/scroll-smoother.js"></script>
         <script type="module" src="/main.js"></script>
+        <script type="module" src="/firebase.js"></script>
     </body>
 </html>

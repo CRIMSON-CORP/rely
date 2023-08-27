@@ -99,3 +99,47 @@
         clip-path: polygon(10% 10%, 10% 10%, 10% 90%, 10% 90%);
     }
 }
+
+#modal button[type="submit"] {
+    @apply relative px-9 py-2.5 bg-white rounded-full self-end overflow-hidden transition-colors duration-500;
+}
+
+#modal button[type="submit"] > .indicator {
+    @apply absolute inset-0 flex justify-center items-center translate-y-9 opacity-0 duration-500 ease-out;
+}
+
+/* success */
+
+#modal button[type="submit"].success {
+    @apply bg-green-700;
+}
+
+#modal button[type="submit"].success .success {
+    @apply translate-y-0 opacity-100;
+}
+
+#modal button[type="submit"].success .loader {
+    @apply -translate-y-9 opacity-0;
+}
+
+#modal button[type="submit"].success .default {
+    @apply opacity-0;
+}
+
+/* loading  */
+
+#modal button[type="submit"].loading {
+    @apply bg-amber-700;
+}
+
+#modal button[type="submit"].loading .loader {
+    @apply translate-y-0 opacity-100;
+}
+
+#modal button[type="submit"].loading .success {
+    @apply translate-y-9 opacity-0;
+}
+
+#modal button[type="submit"].loading .default {
+    @apply opacity-0;
+}

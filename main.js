@@ -891,14 +891,10 @@ function main() {
     function contactForm() {
         const form = document.querySelector("form");
 
-        form.onsubmit = (e) => {
-            e.preventDefault();
-            const formData = new FormData(form);
-            const fullName = formData.get("full-name").split(" ")[0];
+        window.addEventListener("form-submitted", (e) => {
+            document.getElementById("user-name-feedback").innerHTML = e.detail;
 
-            document.getElementById("user-name-feedback").innerHTML = fullName;
-
-            const timeline = gsap.timeline();
+            const timeline = gsap.timeline({ delay: 1.5 });
 
             gsap.set("#form-submit-success-feedback", { pointerEvents: "auto" });
 
@@ -909,7 +905,7 @@ function main() {
                 ease: "power4",
                 stagger: 0.125,
             });
-        };
+        });
     }
 
     headerAnimation();
