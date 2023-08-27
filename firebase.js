@@ -40,6 +40,7 @@ form.onsubmit = async (e) => {
     try {
         submitButton.classList.add("loading");
         submitButton.classList.remove("success");
+        submitButton.style.pointerEvents = "none";
         const docRef = await addDoc(collection(database, "anticipated-users"), {
             full_name: fullName,
             email,
@@ -51,11 +52,11 @@ form.onsubmit = async (e) => {
         submitButton.classList.remove("loading");
 
         window.dispatchEvent(new CustomEvent("form-submitted", { detail: fullName.split(" ")[0] }));
-
-        console.log("Document written with ID: ", docRef.id);
     } catch (e) {
         submitButton.classList.remove("success");
         submitButton.classList.remove("loading");
         console.error("Error adding document: ", e);
+    } finally {
+        submitButton.style.pointerEvents = "auto";
     }
 };

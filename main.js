@@ -889,8 +889,6 @@ function main() {
     }
 
     function contactForm() {
-        const form = document.querySelector("form");
-
         window.addEventListener("form-submitted", (e) => {
             document.getElementById("user-name-feedback").innerHTML = e.detail;
 
@@ -911,6 +909,7 @@ function main() {
     headerAnimation();
     headerDropDown();
     fancyButton();
+    contactForm();
 
     if (pageName === "") {
         heroAnimation();
@@ -924,7 +923,6 @@ function main() {
         spotify();
         animatedCheckboxes();
         modal();
-        contactForm();
         waitlist();
     } else if (pageName === "teams") {
         teamHero();
@@ -934,6 +932,5 @@ function main() {
         teamText();
     } else if (pageName === "contact") {
         contactHero();
-        contactForm();
     }
 }
