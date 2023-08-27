@@ -33,6 +33,25 @@ form.onsubmit = async (e) => {
     const fullName = formData.get("full-name");
     const email = formData.get("email");
     const mobileNumber = formData.get("mobile-number");
+    let platform = "";
+
+    const userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.includes("android")) {
+        platform = "Android";
+    } else if (userAgent.includes("win")) {
+        platform = "Windows";
+    } else if (userAgent.includes("macintosh")) {
+        plaform = "Macbook";
+    } else if (
+        userAgent.includes("iphone") ||
+        userAgent.includes("ipad") ||
+        userAgent.includes("ipod")
+    ) {
+        platform = "Iphone";
+    } else {
+        platform = "Not Determined";
+    }
 
     if (fullName.trim() === "" || email.trim() === "" || mobileNumber.trim() === "")
         return alert("Please fill all input fields 🥹!");
@@ -41,11 +60,11 @@ form.onsubmit = async (e) => {
         submitButton.classList.add("loading");
         submitButton.classList.remove("success");
         submitButton.style.pointerEvents = "none";
-        const docRef = await addDoc(collection(database, "anticipated-users"), {
+        await addDoc(collection(database, "anticipated-users"), {
             full_name: fullName,
             email,
             mobile_number: mobileNumber,
-            platform: window.navigator?.userAgentData?.platform,
+            platform,
             created_at: serverTimestamp(),
         });
         submitButton.classList.add("success");

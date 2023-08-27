@@ -101,7 +101,7 @@
 }
 
 #modal button[type="submit"] {
-    @apply relative px-9 py-2.5 bg-white rounded-full self-end overflow-hidden transition-colors duration-500;
+    @apply relative px-9 py-2.5 bg-white rounded-full self-center md:self-end overflow-hidden transition-colors duration-500;
 }
 
 #modal button[type="submit"] > .indicator {
