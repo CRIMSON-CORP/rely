@@ -42,7 +42,7 @@ form.onsubmit = async (e) => {
     } else if (userAgent.includes("win")) {
         platform = "Windows";
     } else if (userAgent.includes("macintosh")) {
-        plaform = "Macbook";
+        platform = "Macbook";
     } else if (
         userAgent.includes("iphone") ||
         userAgent.includes("ipad") ||
