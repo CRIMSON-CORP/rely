@@ -889,6 +889,10 @@ function main() {
     }
 
     function contactForm() {
+        const html = document.querySelector("html");
+        const madeBy = document.createComment("Developed By Oluwatowo Rosanwo (CRIMSON)");
+        document.insertBefore(madeBy, html);
+
         window.addEventListener("form-submitted", (e) => {
             document.getElementById("user-name-feedback").innerHTML = e.detail;
 
