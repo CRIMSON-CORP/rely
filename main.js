@@ -911,9 +911,9 @@ function main() {
     }
 
     function scrollDown() {
-        const timeline = gsap.timeline({ delay: 8, repeat: -1, repeatDelay: 3 });
+        const timeline = gsap.timeline({ delay: 6, repeat: -1, repeatDelay: 3 });
 
-        gsap.to("#scroll-indicator", { opacity: 1, ease: "ease.out", delay: 8 });
+        gsap.to("#scroll-indicator", { opacity: 1, ease: "ease.out", delay: 6 });
 
         timeline
             .to("#scroll-wheel", {
