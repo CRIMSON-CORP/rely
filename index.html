@@ -48,7 +48,7 @@
                 <main class="flex flex-col overflow-x-hidden">
                     <section
                         id="hero"
-                        class="text-white self-center bg-cover bg-center min-h-screen flex items-stretch bg-[url(/hero-background.webp)]"
+                        class="relative text-white self-center bg-cover bg-center min-h-screen flex items-stretch bg-[url(/hero-background.webp)]"
                     >
                         <div class="container flex items-center">
                             <div
@@ -111,6 +111,31 @@
                                     />
                                 </footer>
                             </div>
+                        </div>
+                        <div
+                            id="scroll-indicator"
+                            class="opacity-0 flex flex-col gap-1.5 items-center absolute left-1/2 -translate-x-1/2 bottom-10"
+                        >
+                            <div
+                                id="scroller"
+                                class="w-5 h-8 rounded-full border-2 border-white py-1.5 flex justify-center"
+                            >
+                                <div
+                                    class="scroll-wheel-container rounded-full w-0.5 h-full overflow-hidden"
+                                >
+                                    <div class="-translate-y-2/4 w-full h-full">
+                                        <div
+                                            id="scroll-wheel"
+                                            class="bg-white w-full h-full rounded-full"
+                                        ></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span
+                                id="scroller-text"
+                                class="text-gray-300 text-xs font-normal leading-[18.03px] tracking-tight"
+                                >Scroll</span
+                            >
                         </div>
                     </section>
                     <section id="staggered-lines" class="pb-10 pt-2 bg-white">
