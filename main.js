@@ -758,18 +758,13 @@ function main() {
                     duration: 0.8,
                 },
                 "-=4"
-            );
-
-        gsap.to("#commet", {
-            scaleY: 1,
-            ease: "expo.out",
-            delay: 3,
-            duration: 3,
-            scrollTrigger: {
-                trigger: "#commet",
-                start: "top 75%",
-            },
-        });
+            )
+            .to("#commet", {
+                scaleY: 1,
+                ease: "expo.out",
+                duration: 3,
+                delay: 2,
+            });
 
         gsap.to("#team-button", {
             y: 0,
