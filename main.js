@@ -911,7 +911,7 @@ function main() {
     }
 
     function scrollDown() {
-        const timeline = gsap.timeline({ delay: 6, repeat: -1, repeatDelay: 3 });
+        const timeline = gsap.timeline({ delay: 6, repeat: -1, repeatDelay: 1.5 });
 
         gsap.to("#scroll-indicator", { opacity: 1, ease: "ease.out", delay: 6 });
 
@@ -923,11 +923,15 @@ function main() {
             })
             .to("#scroller", { y: 15, ease: "ease.out", duration: 1 }, "-=1.3")
             .to("#scroller-text", { y: 15, ease: "ease.out", duration: 1 }, "-=1.2")
-            .to("#scroll-wheel", {
-                y: "0",
-                ease: "expo.out",
-                duration: 1.5,
-            })
+            .to(
+                "#scroll-wheel",
+                {
+                    y: "0",
+                    ease: "expo.out",
+                    duration: 1.5,
+                },
+                "-=0.5"
+            )
             .to("#scroller", { y: 0, ease: "ease.in", duration: 1 }, "-=1.3")
             .to("#scroller-text", { y: 0, ease: "ease.in", duration: 1 }, "-=1.2");
     }
