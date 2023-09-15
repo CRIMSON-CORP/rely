@@ -759,12 +759,15 @@ function main() {
                 },
                 "-=4"
             )
-            .to("#commet", {
-                scaleY: 1,
-                ease: "expo.out",
-                duration: 3,
-                delay: 2,
-            });
+            .to(
+                "#commet",
+                {
+                    scaleY: 1,
+                    ease: "expo.out",
+                    duration: 3,
+                },
+                "-=0.25"
+            );
 
         gsap.to("#team-button", {
             y: 0,
@@ -906,7 +909,7 @@ function main() {
     }
 
     function scrollDown() {
-        const timeline = gsap.timeline({ delay: 6, repeat: -1, repeatDelay: 1.5 });
+        const timeline = gsap.timeline({ delay: 6, repeat: -1, repeatDelay: 0.75 });
 
         gsap.to("#scroll-indicator", { opacity: 1, ease: "ease.out", delay: 6 });
 
